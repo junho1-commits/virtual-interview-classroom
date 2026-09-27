@@ -9,13 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     /* ==========================================================================
-       통합학급 학생 맞춤형 스타일 (A4 2페이지 칼정렬 & 여백 최적화)
+       통합학급 학생 맞춤형 스타일 (A4 2페이지 칼정렬 & 학생 질문 중심)
        ========================================================================== */
     :root {
       --soccer-green: #059669;
       --soccer-green-light: #ecfdf5;
       --soccer-green-border: #a7f3d0;
       --primary-blue: #2563eb;
+      --primary-blue-light: #eff6ff;
       --accent-gold: #f59e0b;
       --gray-50: #f9fafb;
       --gray-100: #f3f4f6;
@@ -39,7 +40,7 @@
       font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
       background-color: #475569;
       color: var(--gray-900);
-      line-height: 1.45;
+      line-height: 1.42;
       padding: 20px 0 40px;
     }
 
@@ -117,7 +118,7 @@
       max-height: 297mm;
       margin: 0 auto 20px;
       background: #ffffff;
-      padding: 12mm 15mm 10mm 15mm;
+      padding: 11mm 14mm 9mm 14mm;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       box-sizing: border-box;
       display: flex;
@@ -129,8 +130,8 @@
     /* 헤더 */
     .sheet-header {
       border-bottom: 2px solid var(--soccer-green);
-      padding-bottom: 6px;
-      margin-bottom: 8px;
+      padding-bottom: 5px;
+      margin-bottom: 7px;
     }
 
     .unit-tag {
@@ -144,7 +145,7 @@
     }
 
     .sheet-main-title {
-      font-size: 1.45rem;
+      font-size: 1.42rem;
       font-weight: 900;
       color: var(--gray-900);
       text-align: center;
@@ -157,10 +158,10 @@
     }
 
     .sheet-sub-title {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: #047857;
       text-align: center;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       font-weight: 700;
     }
 
@@ -173,7 +174,7 @@
       border: 1.5px solid var(--soccer-green-border);
       border-radius: 8px;
       padding: 4px 12px;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 700;
     }
 
@@ -187,7 +188,7 @@
       border: none;
       border-bottom: 1.5px solid var(--soccer-green);
       background: #ffffff;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 800;
       color: var(--gray-900);
       padding: 1px 6px;
@@ -196,12 +197,12 @@
       border-radius: 4px;
     }
 
-    /* 단계별 카드 디자인 */
+    /* 단계별 카드 */
     .step-card {
       background: #ffffff;
       border: 1.5px solid var(--gray-200);
       border-radius: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
       overflow: hidden;
     }
 
@@ -209,7 +210,7 @@
       background: var(--gray-50);
       border-bottom: 1.5px solid var(--gray-200);
       padding: 4px 10px;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 800;
       color: var(--gray-800);
       display: flex;
@@ -237,7 +238,7 @@
       padding: 6px 10px;
     }
 
-    /* 1단계 롤모델 프로필 박스 */
+    /* 1단계 롤모델 프로필 */
     .profile-banner {
       display: flex;
       align-items: center;
@@ -245,12 +246,12 @@
       background: #f0fdf4;
       border: 1.5px dashed #86efac;
       border-radius: 8px;
-      padding: 6px 12px;
+      padding: 5px 12px;
     }
 
     .profile-photo {
-      width: 52px;
-      height: 52px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       border: 2px solid var(--soccer-green);
       object-fit: cover;
@@ -262,14 +263,14 @@
     }
 
     .profile-name-tag {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 900;
       color: #065f46;
       margin-bottom: 1px;
     }
 
     .profile-sub-tag {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: var(--gray-700);
     }
@@ -280,36 +281,33 @@
       gap: 4px;
       background: #fef08a;
       border: 1px solid #facc15;
-      padding: 2px 8px;
+      padding: 1px 8px;
       border-radius: 12px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 800;
       color: #854d0e;
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
-    /* 2단계 질문 3요소 문항 */
+    /* 2단계 학생 질문 중심 문항 */
     .question-item {
       background: #ffffff;
-      border: 1px solid var(--gray-300);
+      border: 1.5px solid var(--gray-300);
       border-radius: 6px;
-      padding: 6px 10px;
-      margin-bottom: 6px;
+      padding: 6px 9px;
+      margin-bottom: 5px;
     }
 
-    .q-title-row {
-      font-size: 0.86rem;
-      font-weight: 800;
-      color: var(--gray-900);
-      margin-bottom: 4px;
+    .q-badge-row {
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: space-between;
+      margin-bottom: 3px;
     }
 
     .q-type-badge {
       font-size: 0.72rem;
-      padding: 1px 5px;
+      padding: 1px 6px;
       border-radius: 4px;
       font-weight: 800;
     }
@@ -317,20 +315,64 @@
     .badge-feel { background: #fce7f3; color: #9d174d; }
     .badge-plan { background: #fef3c7; color: #92400e; }
 
-    /* 동그라미 선택지 버튼 */
+    /* 내가 한 질문 박스 (학생 주도 입력) */
+    .my-question-box {
+      background: var(--primary-blue-light);
+      border-left: 3px solid var(--primary-blue);
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin-bottom: 4px;
+    }
+
+    .my-q-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #1e40af;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
+    .my-q-text {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #1e293b;
+      outline: none;
+      min-height: 20px;
+    }
+
+    /* 손흥민 선수의 대답 박스 */
+    .answer-box {
+      background: #f0fdf4;
+      border-left: 3px solid var(--soccer-green);
+      border-radius: 4px;
+      padding: 4px 8px;
+    }
+
+    .ans-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #065f46;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
     .choice-group {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin: 4px 0;
+      margin: 3px 0;
     }
 
     .choice-chip {
-      background: var(--gray-100);
+      background: #ffffff;
       border: 1.5px solid var(--gray-300);
-      border-radius: 20px;
-      padding: 3px 10px;
-      font-size: 0.84rem;
+      border-radius: 16px;
+      padding: 2px 9px;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--gray-700);
       cursor: pointer;
@@ -354,14 +396,14 @@
     }
 
     .choice-chip .radio-circle {
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
       border: 1.5px solid var(--gray-400);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 900;
       background: #ffffff;
     }
@@ -372,55 +414,37 @@
       color: #ffffff;
     }
 
-    /* 빈칸 채우기 라인 */
     .fill-sentence {
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: var(--gray-800);
-      background: var(--gray-50);
-      border-radius: 4px;
-      padding: 3px 8px;
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
-    .blank-input {
-      border: none;
-      border-bottom: 1.5px solid var(--soccer-green);
-      background: #ffffff;
-      font-size: 0.88rem;
-      font-weight: 800;
-      color: #065f46;
-      padding: 1px 4px;
-      text-align: center;
-      outline: none;
-      border-radius: 3px;
-    }
-
-    /* 2쪽: 명언, 자기평가, 유니폼 다짐 카드 */
+    /* 2쪽: 명언, 자기평가, 유니폼 다짐 */
     .quote-card {
       background: #fffbeb;
       border: 1.5px solid #fde68a;
       border-left: 5px solid var(--accent-gold);
       border-radius: 8px;
-      padding: 6px 10px;
-      margin-bottom: 6px;
+      padding: 5px 10px;
+      margin-bottom: 5px;
     }
 
     .quote-text {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 800;
       color: #92400e;
-      line-height: 1.45;
+      line-height: 1.42;
       text-align: center;
-      margin: 2px 0;
+      margin: 1px 0;
     }
 
-    /* 본받고 싶은 점 체크박스 */
     .checklist-row {
       display: flex;
       flex-direction: column;
       gap: 3px;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
     .custom-check-item {
@@ -445,14 +469,14 @@
     }
 
     .check-box-icon {
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       border-radius: 4px;
       border: 1.5px solid var(--gray-400);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       background: #ffffff;
     }
 
@@ -475,7 +499,7 @@
     }
 
     .eval-label {
-      font-size: 0.84rem;
+      font-size: 0.83rem;
       font-weight: 700;
       color: var(--gray-800);
     }
@@ -490,7 +514,7 @@
       border: 1.5px solid var(--gray-300);
       border-radius: 14px;
       padding: 2px 7px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       color: var(--gray-600);
       cursor: pointer;
@@ -512,7 +536,7 @@
       background: linear-gradient(135deg, #1e3a8a, #3b82f6);
       color: #ffffff;
       border-radius: 10px;
-      padding: 10px 14px;
+      padding: 9px 12px;
       position: relative;
     }
 
@@ -521,12 +545,12 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      padding-bottom: 4px;
-      margin-bottom: 6px;
+      padding-bottom: 3px;
+      margin-bottom: 5px;
     }
 
     .uniform-title {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 900;
       display: flex;
       align-items: center;
@@ -546,14 +570,14 @@
     }
 
     .uniform-pledge-text {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
-      line-height: 1.6;
+      line-height: 1.55;
       text-align: center;
       background: rgba(0, 0, 0, 0.2);
       border-radius: 6px;
-      padding: 6px 10px;
-      margin-bottom: 5px;
+      padding: 5px 8px;
+      margin-bottom: 4px;
     }
 
     .pledge-fill-input {
@@ -561,12 +585,12 @@
       border-bottom: 2px solid #fef08a;
       background: transparent;
       color: #fef08a;
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 900;
       padding: 0 6px;
       text-align: center;
       outline: none;
-      width: 130px;
+      width: 125px;
     }
 
     /* 낱말 보기 칩 */
@@ -576,15 +600,15 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 5px;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
     .word-chip {
       background: #ffffff;
       color: #1e3a8a;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 800;
-      padding: 2px 8px;
+      padding: 2px 7px;
       border-radius: 12px;
       cursor: pointer;
     }
@@ -600,7 +624,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--gray-600);
     }
 
@@ -614,7 +638,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
     }
 
     /* ==========================================================================
@@ -684,7 +708,7 @@
     </div>
   </div>
 
-  <!-- [1쪽] A4 PAGE 1: 롤모델 손흥민 선수와 핵심 질문 돌아보기 -->
+  <!-- [1쪽] A4 PAGE 1: 롤모델 손흥민 선수와 학생 주도 질문 3요소 -->
   <div class="sheet-page" id="page1">
 
     <!-- 머리말 -->
@@ -696,7 +720,7 @@
       <h1 class="sheet-main-title">
         <span>⚽</span> 축구선수의 꿈을 향해 슛!
       </h1>
-      <p class="sheet-sub-title">대한민국 축구 영웅 손흥민 선수와 가상 면담 돌아보기</p>
+      <p class="sheet-sub-title">손흥민 선수에게 직접 질문하고 대답 적기 활동지</p>
 
       <div class="student-info-bar">
         <div class="student-field">
@@ -717,10 +741,10 @@
       </div>
     </header>
 
-    <!-- [1단계] 내가 만난 멋진 롤모델! -->
+    <!-- [1단계] 내가 면담한 멋진 롤모델! -->
     <section class="step-card">
       <div class="step-card-header">
-        <span class="step-badge">1단계</span> 내가 만난 멋진 롤모델을 확인해요!
+        <span class="step-badge">1단계</span> 내가 면담한 멋진 롤모델을 확인해요!
       </div>
       <div class="step-card-body">
         <div class="profile-banner">
@@ -736,73 +760,94 @@
       </div>
     </section>
 
-    <!-- [2단계] 손흥민 선수의 이야기 쏙쏙 골라보기 -->
+    <!-- [2단계] 손흥민 선수에게 직접 질문하고 대답 적기 -->
     <section class="step-card" style="margin-bottom: 0;">
       <div class="step-card-header">
-        <span class="step-badge step-badge-blue">2단계</span> 손흥민 선수가 들려준 이야기 골라보기 (질문 3요소)
+        <span class="step-badge step-badge-blue">2단계</span> 손흥민 선수에게 질문하고 대답 적기 (질문 3요소)
       </div>
       <div class="step-card-body">
 
         <!-- 사실 질문 -->
         <div class="question-item">
-          <div class="q-title-row">
-            <span class="q-type-badge badge-fact">사실 질문</span>
-            <span>1. 손흥민 선수는 어릴 때 매일 어떤 훈련을 가장 많이 했을까요?</span>
+          <div class="q-badge-row">
+            <span class="q-type-badge badge-fact">① 구체적인 사실 질문</span>
+            <span style="font-size: 0.72rem; color: var(--gray-600);">어릴 때 한 훈련 알아보기</span>
           </div>
-          <div class="choice-group">
-            <div class="choice-chip selected" onclick="selectChoice(this, 'choice1')">
-              <span class="radio-circle">✔</span>
-              <span>⚽ 양발 기본기 리프팅 4시간</span>
-            </div>
-            <div class="choice-chip" onclick="selectChoice(this, 'choice1')">
-              <span class="radio-circle"></span>
-              <span>🎮 하루 종일 오락 게임하기</span>
-            </div>
+          <div class="my-question-box">
+            <div class="my-q-label">🗣️ 내가 한 질문:</div>
+            <div id="qFactInput" class="my-q-text" contenteditable="true">손흥민 선수, 축구선수가 되기 위해 어릴 때 매일 어떤 훈련을 하셨나요?</div>
           </div>
-          <div class="fill-sentence">
-            👉 손흥민 선수는 슈팅보다 축구공을 다루는 <b>( 기본기 )</b>를 가장 중요하게 생각해요!
+          <div class="answer-box">
+            <div class="ans-label">💬 손흥민 선수의 대답:</div>
+            <div class="choice-group">
+              <div class="choice-chip selected" onclick="selectChoice(this, 'choice1')">
+                <span class="radio-circle">✔</span>
+                <span>⚽ 양발 기본기 리프팅 4시간</span>
+              </div>
+              <div class="choice-chip" onclick="selectChoice(this, 'choice1')">
+                <span class="radio-circle"></span>
+                <span>🎮 하루 종일 오락 게임하기</span>
+              </div>
+            </div>
+            <div class="fill-sentence">
+              👉 손흥민 선수는 슈팅보다 축구공을 다루는 <b>( 기본기 )</b>를 가장 강조하셨어요!
+            </div>
           </div>
         </div>
 
         <!-- 느낌 질문 -->
         <div class="question-item">
-          <div class="q-title-row">
-            <span class="q-type-badge badge-feel">느낌 질문</span>
-            <span>2. 어린 나이에 말도 안 통하던 독일에서 힘들었을 때 어떻게 이겨냈나요?</span>
+          <div class="q-badge-row">
+            <span class="q-type-badge badge-feel">② 생각이나 느낌 질문</span>
+            <span style="font-size: 0.72rem; color: var(--gray-600);">힘든 순간을 극복한 비결</span>
           </div>
-          <div class="choice-group">
-            <div class="choice-chip" onclick="selectChoice(this, 'choice2')">
-              <span class="radio-circle"></span>
-              <span>😭 무서워서 울기만 했다</span>
-            </div>
-            <div class="choice-chip selected" onclick="selectChoice(this, 'choice2')">
-              <span class="radio-circle">✔</span>
-              <span>💪 끝까지 포기하지 않고 훈련했다</span>
-            </div>
+          <div class="my-question-box">
+            <div class="my-q-label">🗣️ 내가 한 질문:</div>
+            <div id="qFeelInput" class="my-q-text" contenteditable="true">말도 안 통하던 독일에서 외롭고 힘들었을 때 어떤 마음으로 이겨내셨나요?</div>
           </div>
-          <div class="fill-sentence">
-            👉 힘들 때도 포기하지 않는 <b>( 끈기 있는 노력 )</b>이 손흥민 선수를 만들었어요!
+          <div class="answer-box">
+            <div class="ans-label">💬 손흥민 선수의 대답:</div>
+            <div class="choice-group">
+              <div class="choice-chip" onclick="selectChoice(this, 'choice2')">
+                <span class="radio-circle"></span>
+                <span>😭 무서워서 울기만 했다</span>
+              </div>
+              <div class="choice-chip selected" onclick="selectChoice(this, 'choice2')">
+                <span class="radio-circle">✔</span>
+                <span>💪 끝까지 포기하지 않고 훈련했다</span>
+              </div>
+            </div>
+            <div class="fill-sentence">
+              👉 힘들 때도 끝까지 물러서지 않는 <b>( 끈기 있는 노력 )</b>을 배웠어요!
+            </div>
           </div>
         </div>
 
         <!-- 조언 질문 -->
         <div class="question-item" style="margin-bottom: 0;">
-          <div class="q-title-row">
-            <span class="q-type-badge badge-plan">조언 질문</span>
-            <span>3. 축구선수를 꿈꾸는 나에게 손흥민 선수가 해준 가장 중요한 말은?</span>
+          <div class="q-badge-row">
+            <span class="q-type-badge badge-plan">③ 앞으로의 조언 질문</span>
+            <span style="font-size: 0.72rem; color: var(--gray-600);">축구 꿈나무에게 주는 격려</span>
           </div>
-          <div class="choice-group">
-            <div class="choice-chip selected" onclick="selectChoice(this, 'choice3')">
-              <span class="radio-circle">✔</span>
-              <span>❤️ 축구를 진심으로 즐기는 마음</span>
-            </div>
-            <div class="choice-chip" onclick="selectChoice(this, 'choice3')">
-              <span class="radio-circle"></span>
-              <span>😡 남을 이기려고 화내는 마음</span>
-            </div>
+          <div class="my-question-box">
+            <div class="my-q-label">🗣️ 내가 한 질문:</div>
+            <div id="qPlanInput" class="my-q-text" contenteditable="true">축구선수를 꿈꾸는 저에게 꼭 해주고 싶은 조언은 무엇인가요?</div>
           </div>
-          <div class="fill-sentence">
-            👉 "골을 넣는 것보다 축구를 <b>( 즐겁게 사랑하는 마음 )</b>이 제일 중요하단다!"
+          <div class="answer-box">
+            <div class="ans-label">💬 손흥민 선수의 대답:</div>
+            <div class="choice-group">
+              <div class="choice-chip selected" onclick="selectChoice(this, 'choice3')">
+                <span class="radio-circle">✔</span>
+                <span>❤️ 축구를 진심으로 즐기는 마음</span>
+              </div>
+              <div class="choice-chip" onclick="selectChoice(this, 'choice3')">
+                <span class="radio-circle"></span>
+                <span>😡 남을 이기려고 화내는 마음</span>
+              </div>
+            </div>
+            <div class="fill-sentence">
+              👉 "골을 넣는 것보다 축구를 <b>( 진심으로 즐기며 사랑하라 )</b>고 조언해 주셨어요!"
+            </div>
           </div>
         </div>
 
@@ -953,7 +998,7 @@
         <span>* 모덕초등학교 6학년 국어 [궁금한 점을 해결해요] 2차시 활동지</span>
       </div>
       <div class="teacher-box">
-        <span>선생님 칭찬 : "멋진 꿈을 힘차게 응원합니다!" 🌟</span>
+        <span>선생님 칭찬 : "멋진 질문과 진지한 태도 최고예요!" 🌟</span>
         <span>(인)</span>
       </div>
     </footer>
@@ -1011,6 +1056,9 @@
         grade: document.getElementById("gradeInput").value,
         classNum: document.getElementById("classInput").value,
         name: document.getElementById("nameInput").value,
+        qFact: document.getElementById("qFactInput").textContent,
+        qFeel: document.getElementById("qFeelInput").textContent,
+        qPlan: document.getElementById("qPlanInput").textContent,
         uniformNum: document.getElementById("uniformNum").value,
         pledge: document.getElementById("pledgeField").value
       };
@@ -1029,6 +1077,9 @@
             document.getElementById("nameInput").value = d.name;
             document.getElementById("page2NameTag").textContent = d.name;
           }
+          if (d.qFact) document.getElementById("qFactInput").textContent = d.qFact;
+          if (d.qFeel) document.getElementById("qFeelInput").textContent = d.qFeel;
+          if (d.qPlan) document.getElementById("qPlanInput").textContent = d.qPlan;
           if (d.uniformNum) document.getElementById("uniformNum").value = d.uniformNum;
           if (d.pledge) document.getElementById("pledgeField").value = d.pledge;
         } catch(e) {}
