@@ -6,10 +6,10 @@
   <title>국어 6-2 2단원 면담 후 학습지 - 꿈을 찾는 가상 면담 활동지</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
   <style>
     /* ==========================================================================
-       기본 스타일 및 A4 인쇄 규격
+       기본 스타일 및 A4 인쇄 규격 (완벽한 2페이지 칼정렬 & 여백 최적화)
        ========================================================================== */
     :root {
       --primary: #2563eb;
@@ -41,51 +41,51 @@
       font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
       background-color: #64748b;
       color: var(--gray-900);
-      line-height: 1.5;
-      padding: 20px 0 60px;
+      line-height: 1.45;
+      padding: 20px 0 40px;
     }
 
-    /* 플로팅 컨트롤 툴바 */
+    /* 플로팅 컨트롤 툴바 (인쇄 시 숨김) */
     .control-toolbar {
       position: sticky;
       top: 15px;
       z-index: 1000;
       max-width: 820px;
-      margin: 0 auto 20px;
-      background: rgba(255, 255, 255, 0.95);
+      margin: 0 auto 15px;
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(8px);
-      padding: 10px 18px;
+      padding: 8px 18px;
       border-radius: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
       border: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     .toolbar-title {
       font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--gray-800);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .toolbar-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      gap: 5px;
+      padding: 6px 13px;
+      font-size: 0.82rem;
+      font-weight: 700;
       border-radius: 20px;
       cursor: pointer;
       border: none;
@@ -99,7 +99,6 @@
     }
     .btn-primary:hover {
       background: var(--primary-dark);
-      transform: translateY(-1px);
     }
 
     .btn-secondary {
@@ -112,35 +111,35 @@
     }
 
     /* ==========================================================================
-       A4 용지 시뮬레이션
+       A4 용지 규격 (화면 표시용)
        ========================================================================== */
     .sheet-page {
       width: 210mm;
-      min-height: 297mm;
-      margin: 0 auto 25px;
+      height: 297mm;
+      max-height: 297mm;
+      margin: 0 auto 20px;
       background: #ffffff;
-      padding: 15mm 18mm;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      position: relative;
+      padding: 12mm 15mm 10mm 15mm;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      overflow: hidden;
     }
 
     /* 학습지 머리말 */
     .sheet-header {
       border-bottom: 2px solid var(--gray-800);
-      padding-bottom: 10px;
-      margin-bottom: 12px;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .unit-tag {
-      font-size: 0.82rem;
-      font-weight: 700;
+      font-size: 0.8rem;
+      font-weight: 800;
       color: var(--primary);
-      letter-spacing: -0.01em;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -148,20 +147,20 @@
 
     .sheet-main-title {
       font-family: 'Nanum Myeongjo', serif;
-      font-size: 1.65rem;
-      font-weight: 700;
+      font-size: 1.45rem;
+      font-weight: 800;
       color: var(--gray-900);
       text-align: center;
       letter-spacing: -0.02em;
-      margin: 4px 0 2px;
+      margin: 2px 0 1px;
     }
 
     .sheet-sub-title {
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       color: var(--gray-600);
       text-align: center;
-      margin-bottom: 10px;
-      font-weight: 500;
+      margin-bottom: 6px;
+      font-weight: 600;
     }
 
     /* 학생 인적사항 테이블 */
@@ -170,10 +169,11 @@
       align-items: center;
       justify-content: space-between;
       background: var(--gray-50);
-      border: 1px solid var(--gray-300);
-      border-radius: 6px;
-      padding: 6px 14px;
-      font-size: 0.88rem;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 0.86rem;
+      font-weight: 700;
     }
 
     .student-field {
@@ -184,44 +184,41 @@
 
     .input-inline {
       border: none;
-      border-bottom: 1px solid var(--gray-400);
+      border-bottom: 1.5px solid var(--gray-400);
       background: transparent;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.88rem;
+      font-weight: 800;
       color: var(--gray-900);
-      padding: 2px 4px;
+      padding: 1px 4px;
       text-align: center;
       outline: none;
     }
     .input-inline:focus {
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 1.5px solid var(--primary);
       background: var(--primary-light);
     }
 
-    /* ==========================================================================
-       섹션 공통 디자인
-       ========================================================================== */
+    /* 섹션 공통 */
     .section-block {
-      margin-bottom: 12px;
+      margin-bottom: 6px;
     }
 
     .section-title {
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: 0.92rem;
+      font-weight: 800;
       color: var(--gray-900);
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
-      padding-left: 2px;
+      gap: 6px;
+      margin-bottom: 4px;
     }
 
     .step-badge {
       background: var(--primary);
       color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 2px 7px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 6px;
       border-radius: 4px;
     }
 
@@ -241,22 +238,22 @@
     .sheet-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.86rem;
-      margin-bottom: 6px;
+      font-size: 0.84rem;
+      margin-bottom: 4px;
     }
 
     .sheet-table th, .sheet-table td {
       border: 1px solid var(--gray-300);
-      padding: 6px 10px;
+      padding: 4px 8px;
       vertical-align: middle;
     }
 
     .sheet-table th {
       background-color: var(--gray-100);
       color: var(--gray-800);
-      font-weight: 600;
+      font-weight: 700;
       text-align: center;
-      width: 22%;
+      width: 20%;
     }
 
     .sheet-table td {
@@ -266,15 +263,14 @@
     /* 입력 가능 텍스트 영역 */
     .editable-box {
       width: 100%;
-      min-height: 48px;
+      min-height: 28px;
       outline: none;
-      padding: 4px 6px;
-      font-size: 0.88rem;
+      padding: 2px 4px;
+      font-size: 0.85rem;
       color: var(--gray-900);
-      line-height: 1.5;
+      line-height: 1.45;
       background: transparent;
       border-radius: 4px;
-      transition: background 0.15s ease;
       white-space: pre-wrap;
       word-break: break-word;
     }
@@ -291,9 +287,9 @@
 
     /* 질문 3요소 카드 */
     .question-element-card {
-      border: 1px solid var(--gray-300);
+      border: 1.5px solid var(--gray-300);
       border-radius: 6px;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       overflow: hidden;
       background: #ffffff;
     }
@@ -301,9 +297,9 @@
     .element-card-header {
       background: var(--gray-50);
       border-bottom: 1px solid var(--gray-200);
-      padding: 5px 10px;
-      font-size: 0.85rem;
-      font-weight: 700;
+      padding: 3px 8px;
+      font-size: 0.82rem;
+      font-weight: 800;
       color: var(--gray-800);
       display: flex;
       justify-content: space-between;
@@ -311,22 +307,22 @@
     }
 
     .element-card-body {
-      padding: 6px 10px;
+      padding: 4px 8px;
     }
 
     .q-row {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 4px;
-      font-size: 0.86rem;
+      margin-bottom: 2px;
+      font-size: 0.84rem;
     }
 
     .q-label {
-      font-weight: 700;
+      font-weight: 800;
       color: var(--primary);
-      width: 65px;
+      width: 60px;
       flex-shrink: 0;
-      padding-top: 2px;
+      padding-top: 1px;
     }
 
     .q-label-answer {
@@ -335,15 +331,15 @@
 
     .q-content {
       flex: 1;
-      min-height: 24px;
+      min-height: 22px;
     }
 
     /* 줄 공책 형태의 필기 라인 */
     .ruled-box {
       border-bottom: 1px dashed var(--line-color);
-      min-height: 26px;
-      padding: 2px 4px;
-      font-size: 0.88rem;
+      min-height: 24px;
+      padding: 1px 4px;
+      font-size: 0.84rem;
       outline: none;
     }
     .ruled-box:focus {
@@ -357,18 +353,18 @@
     /* 깊이 탐구하기 인용구 박스 */
     .quote-box {
       background: #fffbeb;
-      border: 1px solid #fde68a;
+      border: 1.5px solid #fde68a;
       border-left: 4px solid var(--accent);
-      border-radius: 4px;
-      padding: 8px 12px;
-      margin-bottom: 8px;
+      border-radius: 6px;
+      padding: 5px 10px;
+      margin-bottom: 5px;
     }
 
     .quote-content {
-      font-size: 0.92rem;
-      font-weight: 600;
+      font-size: 0.88rem;
+      font-weight: 700;
       color: #92400e;
-      min-height: 28px;
+      min-height: 24px;
       outline: none;
     }
 
@@ -376,35 +372,34 @@
     .eval-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.84rem;
-      margin-top: 4px;
+      font-size: 0.8rem;
+      margin-top: 2px;
     }
 
     .eval-table th, .eval-table td {
       border: 1px solid var(--gray-300);
-      padding: 5px 8px;
+      padding: 3px 6px;
       text-align: center;
     }
 
     .eval-table th {
       background: var(--gray-100);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .eval-table td.criteria {
       text-align: left;
-      font-size: 0.83rem;
+      font-size: 0.8rem;
       color: var(--gray-800);
     }
 
     .stars-cell {
       cursor: pointer;
       user-select: none;
-      font-size: 1.05rem;
-      letter-spacing: 2px;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
       color: #d1d5db;
       white-space: nowrap;
-      transition: color 0.15s ease;
     }
 
     .stars-cell.active-3 {
@@ -419,58 +414,66 @@
 
     /* 다짐 박스 */
     .pledge-box {
-      border: 2px solid var(--primary);
+      border: 1.5px solid var(--primary);
       background: var(--primary-light);
       border-radius: 8px;
-      padding: 10px 14px;
-      font-size: 0.95rem;
-      font-weight: 600;
+      padding: 6px 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
       color: #1e3a8a;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .pledge-input {
       flex: 1;
       border: none;
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 1.5px solid var(--primary);
       background: transparent;
-      font-size: 0.95rem;
-      font-weight: 700;
+      font-size: 0.9rem;
+      font-weight: 800;
       color: #1e40af;
-      padding: 2px 6px;
+      padding: 1px 4px;
       outline: none;
     }
 
     /* 학습지 바닥글 */
     .sheet-footer {
-      border-top: 1px solid var(--gray-300);
-      padding-top: 8px;
-      margin-top: auto;
+      border-top: 1.5px solid var(--gray-300);
+      padding-top: 4px;
+      margin-top: 4px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--gray-600);
     }
 
     .teacher-confirm {
       border: 1px solid var(--gray-400);
       border-radius: 4px;
-      padding: 4px 10px;
+      padding: 2px 8px;
       background: var(--gray-50);
-      font-weight: 600;
+      font-weight: 700;
       color: var(--gray-700);
     }
 
     /* ==========================================================================
-       인쇄 스타일 (@media print)
+       인쇄 스타일 (@page & @media print) - 완벽한 2페이지 칼정렬 보장
        ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 10mm 14mm 10mm 14mm;
+    }
+
     @media print {
-      body {
+      html, body {
+        width: 100% !important;
+        height: auto !important;
         background: transparent !important;
         padding: 0 !important;
+        margin: 0 !important;
       }
 
       .control-toolbar {
@@ -479,16 +482,26 @@
 
       .sheet-page {
         width: 100% !important;
-        min-height: auto !important;
+        height: 275mm !important;
+        max-height: 275mm !important;
         margin: 0 !important;
-        padding: 12mm 15mm !important;
+        padding: 0 !important;
         box-shadow: none !important;
         border: none !important;
-        page-break-after: always !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
       }
 
-      .sheet-page:last-child {
-        page-break-after: auto !important;
+      #page1 {
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+
+      #page2 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
       }
 
       .editable-box:empty:before,
@@ -508,26 +521,22 @@
 </head>
 <body>
 
-  <!-- =========================================================================
-       상단 플로팅 툴바 (화면 전용, 인쇄 시 숨김)
-       ========================================================================= -->
+  <!-- 플로팅 툴바 (인쇄 시 숨김) -->
   <div class="control-toolbar">
     <div class="toolbar-title">
       <span>📑</span> <strong>국어 2단원 가상 면담 후 학습지</strong>
     </div>
     <div class="toolbar-actions">
-      <a href="index.html" class="btn btn-secondary">🏠 가상 면담 챗봇</a>
+      <a href="index.html" class="btn btn-secondary">🏠 챗봇 홈</a>
       <a href="통합학급_면담_후_학습지_축구선수.html" class="btn btn-secondary" style="border-color: #059669; color: #059669; font-weight: 700;">⚽ 통합학급용 (축구)</a>
-      <button class="btn btn-secondary" onclick="saveToLocalStorage()">💾 작성 내용 저장</button>
+      <button class="btn btn-secondary" onclick="saveToLocalStorage()">💾 저장</button>
       <button class="btn btn-secondary" onclick="resetWorksheet()">🔄 초기화</button>
-      <button class="btn btn-secondary" onclick="copyWorksheetText()">📋 텍스트 복사</button>
+      <button class="btn btn-secondary" onclick="copyWorksheetText()">📋 복사</button>
       <button class="btn btn-primary" onclick="window.print()">🖨️ A4 학습지 인쇄</button>
     </div>
   </div>
 
-  <!-- =========================================================================
-       [1쪽] A4 PAGE 1: 면담 개요 & 질문 3요소 핵심 정리
-       ========================================================================= -->
+  <!-- [1쪽] A4 PAGE 1: 면담 개요 & 질문 3요소 핵심 정리 -->
   <div class="sheet-page" id="page1">
     
     <!-- 머리말 -->
@@ -542,9 +551,9 @@
       <div class="student-info-bar">
         <div class="student-field">
           <span>6학년</span>
-          <input type="text" id="stuGrade" class="input-inline" style="width: 35px;" placeholder="   ">
+          <input type="text" id="stuGrade" class="input-inline" style="width: 32px;" placeholder="   ">
           <span>반</span>
-          <input type="text" id="stuClass" class="input-inline" style="width: 35px;" placeholder="   ">
+          <input type="text" id="stuClass" class="input-inline" style="width: 32px;" placeholder="   ">
           <span>번</span>
         </div>
         <div class="student-field">
@@ -553,7 +562,7 @@
         </div>
         <div class="student-field">
           <span>면담 날짜 :</span>
-          <input type="text" id="stuDate" class="input-inline" style="width: 120px;" value="2026.   .   .">
+          <input type="text" id="stuDate" class="input-inline" style="width: 110px;" value="2026.   .   .">
         </div>
       </div>
     </header>
@@ -592,15 +601,15 @@
       <h2 class="section-title">
         <span class="step-badge step-badge-accent">2단계</span> 핵심 질문 3요소로 내용 정리하기 (면담 가운데 부분)
       </h2>
-      <p style="font-size: 0.8rem; color: var(--gray-600); margin-bottom: 6px;">
-        💡 <b>국어 2단원 쏙쏙 핵심</b>: 면담할 때에는 <u>구체적인 사실</u>, <u>생각이나 느낌</u>, <u>앞으로의 계획이나 당부</u>를 골고루 질문해야 깊이 있는 정보를 얻을 수 있습니다.
+      <p style="font-size: 0.78rem; color: var(--gray-600); margin-bottom: 4px;">
+        💡 <b>국어 2단원 쏙쏙 핵심</b>: 면담할 때에는 <u>구체적인 사실</u>, <u>생각이나 느낌</u>, <u>앞으로의 계획이나 당부</u>를 골고루 질문해야 풍성한 정보를 얻을 수 있습니다.
       </p>
 
       <!-- ① 구체적인 사실 -->
       <div class="question-element-card">
         <div class="element-card-header">
           <span>① 구체적인 사실에 대한 질문과 답변</span>
-          <span style="font-size: 0.75rem; color: var(--gray-500);">하는 일, 일과, 자격, 준비 과정 등</span>
+          <span style="font-size: 0.72rem; color: var(--gray-500);">하는 일, 일과, 자격, 준비 과정 등</span>
         </div>
         <div class="element-card-body">
           <div class="q-row">
@@ -609,7 +618,7 @@
           </div>
           <div class="q-row">
             <span class="q-label q-label-answer">답변 요약:</span>
-            <div id="aFact" contenteditable="true" class="q-content ruled-box" style="min-height: 48px;" data-placeholder="면담 대상자의 답변 핵심 내용을 요약하여 적어 보세요."></div>
+            <div id="aFact" contenteditable="true" class="q-content ruled-box" style="min-height: 38px;" data-placeholder="면담 대상자의 답변 핵심 내용을 요약하여 적어 보세요."></div>
           </div>
         </div>
       </div>
@@ -618,7 +627,7 @@
       <div class="question-element-card">
         <div class="element-card-header">
           <span>② 생각이나 느낌에 대한 질문과 답변</span>
-          <span style="font-size: 0.75rem; color: var(--gray-500);">보람찬 순간, 힘들었던 순간과 극복 비결 등</span>
+          <span style="font-size: 0.72rem; color: var(--gray-500);">보람찬 순간, 힘들었던 순간과 극복 비결 등</span>
         </div>
         <div class="element-card-body">
           <div class="q-row">
@@ -627,7 +636,7 @@
           </div>
           <div class="q-row">
             <span class="q-label q-label-answer">답변 요약:</span>
-            <div id="aFeel" contenteditable="true" class="q-content ruled-box" style="min-height: 48px;" data-placeholder="면담 대상자가 느꼈던 감정과 이를 극복한 생생한 일화를 적어 보세요."></div>
+            <div id="aFeel" contenteditable="true" class="q-content ruled-box" style="min-height: 38px;" data-placeholder="면담 대상자가 느꼈던 감정과 이를 극복한 생생한 일화를 적어 보세요."></div>
           </div>
         </div>
       </div>
@@ -636,7 +645,7 @@
       <div class="question-element-card">
         <div class="element-card-header">
           <span>③ 앞으로의 계획이나 당부에 대한 질문과 답변</span>
-          <span style="font-size: 0.75rem; color: var(--gray-500);">앞으로의 목표, 초등학생에게 전하는 따뜻한 조언 등</span>
+          <span style="font-size: 0.72rem; color: var(--gray-500);">앞으로의 목표, 초등학생에게 전하는 따뜻한 조언 등</span>
         </div>
         <div class="element-card-body">
           <div class="q-row">
@@ -645,7 +654,7 @@
           </div>
           <div class="q-row">
             <span class="q-label q-label-answer">답변 요약:</span>
-            <div id="aPlan" contenteditable="true" class="q-content ruled-box" style="min-height: 48px;" data-placeholder="면담 대상자가 건넨 따뜻한 당부와 앞으로의 계획을 적어 보세요."></div>
+            <div id="aPlan" contenteditable="true" class="q-content ruled-box" style="min-height: 38px;" data-placeholder="면담 대상자가 건넨 따뜻한 당부와 앞으로의 계획을 적어 보세요."></div>
           </div>
         </div>
       </div>
@@ -654,23 +663,21 @@
     <!-- 1쪽 바닥글 -->
     <footer class="sheet-footer">
       <span>모덕초등학교 6학년 국어 [2단원 궁금한 점을 해결해요]</span>
-      <span style="font-weight:700;">- 1쪽 (앞면) -</span>
+      <span style="font-weight:800; color: var(--primary);">- 1쪽 (앞면) -</span>
     </footer>
 
   </div>
 
-  <!-- =========================================================================
-       [2쪽] A4 PAGE 2: 깊이 탐구하기, 자기 성찰 평가, 나의 진로 다짐
-       ========================================================================= -->
+  <!-- [2쪽] A4 PAGE 2: 깊이 탐구하기, 자기 성찰 평가, 나의 진로 다짐 -->
   <div class="sheet-page" id="page2">
     
     <!-- 2쪽 머리말 -->
-    <header class="sheet-header" style="margin-bottom: 14px;">
+    <header class="sheet-header">
       <div class="unit-tag">
         <span>[국어 6-2 2단원 활동지 - 이어서]</span>
-        <span>이름 : <span id="page2Name" style="font-weight: 700; color: var(--gray-800); text-decoration: underline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+        <span>이름 : <span id="page2Name" style="font-weight: 800; color: var(--gray-800); text-decoration: underline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
       </div>
-      <h2 style="font-size: 1.15rem; font-weight: 700; color: var(--gray-800); text-align: center;">
+      <h2 style="font-size: 1.15rem; font-weight: 800; color: var(--gray-800); text-align: center; margin: 1px 0 2px;">
         면담 내용 깊이 탐구하기 &amp; 나의 꿈 다짐
       </h2>
     </header>
@@ -682,35 +689,35 @@
       </h2>
 
       <!-- 새롭게 알게 된 사실 -->
-      <div style="margin-bottom: 10px;">
-        <label style="font-size: 0.88rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 3px;">
+      <div style="margin-bottom: 6px;">
+        <label style="font-size: 0.84rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 2px;">
           🔍 1. 면담 전에는 몰랐는데, 새롭게 알게 된 사실은 무엇인가요?
         </label>
-        <div id="viewLearned" contenteditable="true" class="ruled-box" style="min-height: 54px;" data-placeholder="예: 겉으로는 화려해 보였지만, 데뷔 전 수많은 실패 속에서도 매일 일기장을 쓰며 생각을 정리하고 가사를 지었다는 점을 새롭게 알았습니다."></div>
+        <div id="viewLearned" contenteditable="true" class="ruled-box" style="min-height: 38px;" data-placeholder="예: 겉으로는 화려해 보였지만, 데뷔 전 수많은 실패 속에서도 매일 일기장을 쓰며 생각을 정리하고 가사를 지었다는 점을 새롭게 알았습니다."></div>
       </div>
 
       <!-- 마음을 울린 한마디 (명언) -->
       <div>
-        <label style="font-size: 0.88rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 3px;">
+        <label style="font-size: 0.84rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 2px;">
           💬 2. 면담 대상자의 답변 중 가장 마음에 와닿은 한마디(명언)와 그 까닭을 써 봅시다.
         </label>
         <div class="quote-box">
-          <div style="font-size: 0.78rem; color: #b45309; font-weight: 700; margin-bottom: 2px;">가장 기억에 남는 말:</div>
+          <div style="font-size: 0.74rem; color: #b45309; font-weight: 800; margin-bottom: 1px;">가장 기억에 남는 말:</div>
           <div id="viewQuote" contenteditable="true" class="quote-content" data-placeholder="❝ 훌륭한 실패는 더 좋은 자리를 찾아가는 나침반이에요. 조급해하지 말고 자기만의 속도로 걸어가세요. ❞"></div>
         </div>
-        <div style="padding-left: 4px;">
-          <span style="font-size: 0.84rem; font-weight: 700; color: var(--gray-700);">이 말이 인상 깊었던 까닭:</span>
-          <div id="viewQuoteReason" contenteditable="true" class="ruled-box" style="min-height: 40px;" data-placeholder="왜 이 말이 내 마음에 와닿았는지 나의 생각과 느낌을 솔직하게 적어 보세요."></div>
+        <div style="padding-left: 2px;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--gray-700);">이 말이 인상 깊었던 까닭:</span>
+          <div id="viewQuoteReason" contenteditable="true" class="ruled-box" style="min-height: 28px;" data-placeholder="왜 이 말이 내 마음에 와닿았는지 나의 생각과 느낌을 솔직하게 적어 보세요."></div>
         </div>
       </div>
     </section>
 
     <!-- [4단계] 면담 과정 성찰 및 자기 평가 -->
-    <section class="section-block" style="margin-top: 14px;">
+    <section class="section-block">
       <h2 class="section-title">
         <span class="step-badge step-badge-orange">4단계</span> 면담 과정 성찰 및 자기 평가 (과정 중심 평가)
       </h2>
-      <p style="font-size: 0.8rem; color: var(--gray-600); margin-bottom: 4px;">
+      <p style="font-size: 0.76rem; color: var(--gray-600); margin-bottom: 2px;">
         스스로 나의 면담 태도와 실천 과정을 되돌아보며 별에 색칠해 봅시다. (별을 클릭하면 점수가 바뀝니다)
       </p>
 
@@ -719,7 +726,7 @@
           <tr>
             <th style="width: 18%;">평가 영역</th>
             <th>평가 기준</th>
-            <th style="width: 25%;">자기 평가</th>
+            <th style="width: 22%;">자기 평가</th>
           </tr>
         </thead>
         <tbody>
@@ -753,20 +760,20 @@
     </section>
 
     <!-- [5단계] 나의 진로와 미래 연결하기 -->
-    <section class="section-block" style="margin-top: 14px;">
+    <section class="section-block">
       <h2 class="section-title">
         <span class="step-badge">5단계</span> 나의 진로와 미래 연결하기 (면담 뒷부분 &amp; 나의 다짐)
       </h2>
 
-      <div style="margin-bottom: 10px;">
-        <label style="font-size: 0.88rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 3px;">
+      <div style="margin-bottom: 6px;">
+        <label style="font-size: 0.84rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 2px;">
           🚀 1. 면담 대상자의 삶과 태도 중에서 내가 본받고 싶은 점은 무엇인가요?
         </label>
-        <div id="viewRoleModel" contenteditable="true" class="ruled-box" style="min-height: 48px;" data-placeholder="예: 아무리 힘든 실패를 겪어도 포기하지 않고, 꾸준히 일기를 쓰며 자신을 돌아보는 성실함과 끈기를 본받고 싶습니다."></div>
+        <div id="viewRoleModel" contenteditable="true" class="ruled-box" style="min-height: 32px;" data-placeholder="예: 아무리 힘든 실패를 겪어도 포기하지 않고, 꾸준히 일기를 쓰며 자신을 돌아보는 성실함과 끈기를 본받고 싶습니다."></div>
       </div>
 
       <div>
-        <label style="font-size: 0.88rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 4px;">
+        <label style="font-size: 0.84rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 3px;">
           ✍️ 2. 나의 꿈과 미래를 향한 한 줄 다짐을 완성해 봅시다.
         </label>
         <div class="pledge-box">
@@ -789,16 +796,13 @@
 
   </div>
 
-  <!-- =========================================================================
-       스크립트: 데이터 연동, 로컬 저장, 별점 토글, 인쇄
-       ========================================================================= -->
+  <!-- 스크립트 -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       loadInitialData();
       setupAutoSave();
     });
 
-    // 별점 토글 (⭐⭐⭐ -> ⭐⭐ -> ⭐ -> ⭐⭐⭐)
     function toggleStars(cell) {
       if (cell.classList.contains("active-3")) {
         cell.classList.remove("active-3");
@@ -816,14 +820,11 @@
       saveToLocalStorage(false);
     }
 
-    // 이름 입력 시 2쪽에도 자동 반영
     document.getElementById("stuName").addEventListener("input", (e) => {
       document.getElementById("page2Name").textContent = e.target.value.trim() || "        ";
     });
 
-    // 데이터 불러오기 (챗봇에서 전달한 데이터 또는 기존 작성 내용)
     function loadInitialData() {
-      // 1. 챗봇에서 바로 내보낸 임시 면담 데이터가 있는지 확인
       const sessionData = sessionStorage.getItem("currentInterviewWorksheet");
       const localData = localStorage.getItem("modeok_interview_worksheet");
       
@@ -858,7 +859,6 @@
       }
     }
 
-    // 로컬 스토리지 저장
     function saveToLocalStorage(showNotice = true) {
       const data = {
         stuGrade: document.getElementById("stuGrade").value,
@@ -881,23 +881,17 @@
       };
 
       localStorage.setItem("modeok_interview_worksheet", JSON.stringify(data));
-      if (showNotice) {
-        alert("학습지 내용이 안전하게 저장되었습니다! 브라우저를 닫았다가 다시 열어도 그대로 유지됩니다.");
-      }
+      if (showNotice) alert("학습지 내용이 안전하게 저장되었습니다! 👍");
     }
 
-    // 변경 시 자동 저장 디바운스
     function setupAutoSave() {
       let timer = null;
       document.body.addEventListener("input", () => {
         clearTimeout(timer);
-        timer = setTimeout(() => {
-          saveToLocalStorage(false);
-        }, 1500);
+        timer = setTimeout(() => { saveToLocalStorage(false); }, 1500);
       });
     }
 
-    // 학습지 초기화
     function resetWorksheet() {
       if (confirm("학습지 내용을 모두 지우고 빈 양식으로 초기화할까요?")) {
         localStorage.removeItem("modeok_interview_worksheet");
@@ -906,7 +900,6 @@
       }
     }
 
-    // 전체 텍스트 복사 (한글/워드/패들렛 제출용)
     function copyWorksheetText() {
       const grade = document.getElementById("stuGrade").value;
       const cls = document.getElementById("stuClass").value;

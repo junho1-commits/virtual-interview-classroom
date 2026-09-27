@@ -6,19 +6,17 @@
   <title>[통합학급용] 축구선수의 꿈을 향해! 손흥민 선수와 가상 면담 활동지</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Nanum+Round:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     /* ==========================================================================
-       통합학급 학생 맞춤형 스타일 (큰 글씨, 고대비, 친근한 시각 디자인)
+       통합학급 학생 맞춤형 스타일 (A4 2페이지 칼정렬 & 여백 최적화)
        ========================================================================== */
     :root {
       --soccer-green: #059669;
       --soccer-green-light: #ecfdf5;
       --soccer-green-border: #a7f3d0;
       --primary-blue: #2563eb;
-      --primary-blue-light: #eff6ff;
       --accent-gold: #f59e0b;
-      --accent-gold-light: #fffbeb;
       --gray-50: #f9fafb;
       --gray-100: #f3f4f6;
       --gray-200: #e5e7eb;
@@ -41,50 +39,50 @@
       font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
       background-color: #475569;
       color: var(--gray-900);
-      line-height: 1.6;
-      padding: 20px 0 60px;
+      line-height: 1.45;
+      padding: 20px 0 40px;
     }
 
-    /* 플로팅 컨트롤 툴바 */
+    /* 플로팅 컨트롤 툴바 (인쇄 시 숨김) */
     .control-toolbar {
       position: sticky;
       top: 15px;
       z-index: 1000;
       max-width: 820px;
-      margin: 0 auto 20px;
+      margin: 0 auto 15px;
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(8px);
-      padding: 10px 20px;
+      padding: 8px 18px;
       border-radius: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
       border: 2px solid var(--soccer-green);
     }
 
     .toolbar-title {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 800;
       color: var(--soccer-green);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .toolbar-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      font-size: 0.88rem;
+      gap: 5px;
+      padding: 6px 13px;
+      font-size: 0.82rem;
       font-weight: 700;
       border-radius: 20px;
       cursor: pointer;
@@ -99,7 +97,6 @@
     }
     .btn-green:hover {
       background: #047857;
-      transform: translateY(-1px);
     }
 
     .btn-secondary {
@@ -112,57 +109,58 @@
     }
 
     /* ==========================================================================
-       A4 용지 규격 (2페이지 구성)
+       A4 용지 규격 (화면 표시용)
        ========================================================================== */
     .sheet-page {
       width: 210mm;
-      min-height: 297mm;
-      margin: 0 auto 25px;
+      height: 297mm;
+      max-height: 297mm;
+      margin: 0 auto 20px;
       background: #ffffff;
-      padding: 14mm 16mm;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-      position: relative;
+      padding: 12mm 15mm 10mm 15mm;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      overflow: hidden;
     }
 
     /* 헤더 */
     .sheet-header {
-      border-bottom: 3px solid var(--soccer-green);
-      padding-bottom: 10px;
-      margin-bottom: 12px;
+      border-bottom: 2px solid var(--soccer-green);
+      padding-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .unit-tag {
-      font-size: 0.88rem;
+      font-size: 0.8rem;
       font-weight: 800;
       color: var(--soccer-green);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .sheet-main-title {
-      font-size: 1.68rem;
+      font-size: 1.45rem;
       font-weight: 900;
       color: var(--gray-900);
       text-align: center;
       letter-spacing: -0.02em;
-      margin: 4px 0 2px;
+      margin: 2px 0 1px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .sheet-sub-title {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: #047857;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       font-weight: 700;
     }
 
@@ -172,62 +170,60 @@
       align-items: center;
       justify-content: space-between;
       background: var(--soccer-green-light);
-      border: 2px solid var(--soccer-green-border);
-      border-radius: 10px;
-      padding: 8px 16px;
-      font-size: 0.95rem;
+      border: 1.5px solid var(--soccer-green-border);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 0.88rem;
       font-weight: 700;
     }
 
     .student-field {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
     }
 
     .input-inline {
       border: none;
-      border-bottom: 2px solid var(--soccer-green);
+      border-bottom: 1.5px solid var(--soccer-green);
       background: #ffffff;
-      font-size: 1rem;
+      font-size: 0.92rem;
       font-weight: 800;
       color: var(--gray-900);
-      padding: 2px 8px;
+      padding: 1px 6px;
       text-align: center;
       outline: none;
       border-radius: 4px;
     }
 
-    /* ==========================================================================
-       단계별 카드 디자인 (시각적 비계 강화)
-       ========================================================================== */
+    /* 단계별 카드 디자인 */
     .step-card {
       background: #ffffff;
-      border: 2px solid var(--gray-200);
-      border-radius: 12px;
-      margin-bottom: 12px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 8px;
+      margin-bottom: 8px;
       overflow: hidden;
     }
 
     .step-card-header {
       background: var(--gray-50);
-      border-bottom: 2px solid var(--gray-200);
-      padding: 8px 14px;
-      font-size: 1.05rem;
+      border-bottom: 1.5px solid var(--gray-200);
+      padding: 4px 10px;
+      font-size: 0.92rem;
       font-weight: 800;
       color: var(--gray-800);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .step-badge {
       background: var(--soccer-green);
       color: #ffffff;
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       font-weight: 800;
-      padding: 3px 8px;
-      border-radius: 6px;
+      padding: 2px 6px;
+      border-radius: 4px;
     }
 
     .step-badge-blue {
@@ -238,27 +234,26 @@
     }
 
     .step-card-body {
-      padding: 10px 14px;
+      padding: 6px 10px;
     }
 
     /* 1단계 롤모델 프로필 박스 */
     .profile-banner {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
       background: #f0fdf4;
-      border: 2px dashed #86efac;
-      border-radius: 10px;
-      padding: 10px 16px;
+      border: 1.5px dashed #86efac;
+      border-radius: 8px;
+      padding: 6px 12px;
     }
 
     .profile-photo {
-      width: 75px;
-      height: 75px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      border: 3px solid var(--soccer-green);
+      border: 2px solid var(--soccer-green);
       object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       flex-shrink: 0;
     }
 
@@ -267,14 +262,14 @@
     }
 
     .profile-name-tag {
-      font-size: 1.25rem;
+      font-size: 1.05rem;
       font-weight: 900;
       color: #065f46;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .profile-sub-tag {
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--gray-700);
     }
@@ -282,39 +277,39 @@
     .dream-match-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       background: #fef08a;
       border: 1px solid #facc15;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.88rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.78rem;
       font-weight: 800;
       color: #854d0e;
-      margin-top: 4px;
+      margin-top: 2px;
     }
 
     /* 2단계 질문 3요소 문항 */
     .question-item {
       background: #ffffff;
       border: 1px solid var(--gray-300);
-      border-radius: 8px;
-      padding: 10px 14px;
-      margin-bottom: 8px;
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin-bottom: 6px;
     }
 
     .q-title-row {
-      font-size: 0.95rem;
+      font-size: 0.86rem;
       font-weight: 800;
       color: var(--gray-900);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
     .q-type-badge {
-      font-size: 0.75rem;
-      padding: 2px 6px;
+      font-size: 0.72rem;
+      padding: 1px 5px;
       border-radius: 4px;
       font-weight: 800;
     }
@@ -326,22 +321,22 @@
     .choice-group {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin: 6px 0;
+      gap: 8px;
+      margin: 4px 0;
     }
 
     .choice-chip {
       background: var(--gray-100);
-      border: 2px solid var(--gray-300);
-      border-radius: 30px;
-      padding: 6px 14px;
-      font-size: 0.92rem;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 0.84rem;
       font-weight: 700;
       color: var(--gray-700);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       user-select: none;
       transition: all 0.15s ease;
     }
@@ -355,18 +350,18 @@
       background: #dcfce7;
       border-color: var(--soccer-green);
       color: #065f46;
-      box-shadow: 0 0 0 2px #86efac;
+      font-weight: 800;
     }
 
     .choice-chip .radio-circle {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
-      border: 2px solid var(--gray-400);
+      border: 1.5px solid var(--gray-400);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 900;
       background: #ffffff;
     }
@@ -379,66 +374,64 @@
 
     /* 빈칸 채우기 라인 */
     .fill-sentence {
-      font-size: 0.92rem;
+      font-size: 0.84rem;
       font-weight: 600;
       color: var(--gray-800);
       background: var(--gray-50);
-      border-radius: 6px;
-      padding: 6px 10px;
-      margin-top: 4px;
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-top: 3px;
     }
 
     .blank-input {
       border: none;
-      border-bottom: 2px solid var(--soccer-green);
+      border-bottom: 1.5px solid var(--soccer-green);
       background: #ffffff;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       font-weight: 800;
       color: #065f46;
-      padding: 1px 6px;
+      padding: 1px 4px;
       text-align: center;
       outline: none;
-      border-radius: 4px;
+      border-radius: 3px;
     }
 
-    /* ==========================================================================
-       2쪽: 명언, 자기평가, 유니폼 다짐 카드
-       ========================================================================= */
+    /* 2쪽: 명언, 자기평가, 유니폼 다짐 카드 */
     .quote-card {
       background: #fffbeb;
-      border: 2px solid #fde68a;
-      border-left: 6px solid var(--accent-gold);
-      border-radius: 10px;
-      padding: 10px 14px;
-      margin-bottom: 12px;
+      border: 1.5px solid #fde68a;
+      border-left: 5px solid var(--accent-gold);
+      border-radius: 8px;
+      padding: 6px 10px;
+      margin-bottom: 6px;
     }
 
     .quote-text {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 800;
       color: #92400e;
-      line-height: 1.5;
+      line-height: 1.45;
       text-align: center;
-      margin: 4px 0;
+      margin: 2px 0;
     }
 
     /* 본받고 싶은 점 체크박스 */
     .checklist-row {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      margin-top: 6px;
+      gap: 3px;
+      margin-top: 4px;
     }
 
     .custom-check-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 6px 12px;
+      gap: 8px;
+      padding: 4px 10px;
       background: var(--gray-50);
       border: 1px solid var(--gray-300);
-      border-radius: 8px;
-      font-size: 0.92rem;
+      border-radius: 6px;
+      font-size: 0.84rem;
       font-weight: 700;
       color: var(--gray-800);
       cursor: pointer;
@@ -452,14 +445,14 @@
     }
 
     .check-box-icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
-      border: 2px solid var(--gray-400);
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 1.5px solid var(--gray-400);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       background: #ffffff;
     }
 
@@ -474,36 +467,36 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 12px;
-      border-bottom: 1px dashed var(--gray-300);
+      padding: 4px 8px;
+      border-bottom: 1px dashed var(--gray-200);
     }
     .eval-row:last-child {
       border-bottom: none;
     }
 
     .eval-label {
-      font-size: 0.92rem;
+      font-size: 0.84rem;
       font-weight: 700;
       color: var(--gray-800);
     }
 
     .smile-group {
       display: flex;
-      gap: 8px;
+      gap: 5px;
     }
 
     .smile-btn {
       background: #ffffff;
-      border: 2px solid var(--gray-300);
-      border-radius: 20px;
-      padding: 3px 10px;
-      font-size: 0.85rem;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 14px;
+      padding: 2px 7px;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--gray-600);
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
       transition: all 0.15s ease;
     }
 
@@ -511,18 +504,16 @@
       background: #fef08a;
       border-color: #eab308;
       color: #854d0e;
-      transform: scale(1.05);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-weight: 800;
     }
 
     /* 유니폼 다짐 카드 */
     .uniform-card {
       background: linear-gradient(135deg, #1e3a8a, #3b82f6);
       color: #ffffff;
-      border-radius: 14px;
-      padding: 14px 18px;
+      border-radius: 10px;
+      padding: 10px 14px;
       position: relative;
-      box-shadow: 0 6px 15px rgba(30, 58, 138, 0.25);
     }
 
     .uniform-header {
@@ -530,39 +521,39 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      padding-bottom: 6px;
-      margin-bottom: 10px;
+      padding-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .uniform-title {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 900;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .uniform-number-box {
       background: rgba(255, 255, 255, 0.2);
-      border: 2px solid #ffffff;
-      border-radius: 8px;
-      padding: 2px 10px;
-      font-size: 1.1rem;
+      border: 1.5px solid #ffffff;
+      border-radius: 6px;
+      padding: 1px 8px;
+      font-size: 0.95rem;
       font-weight: 900;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
     }
 
     .uniform-pledge-text {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      line-height: 1.8;
+      line-height: 1.6;
       text-align: center;
       background: rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      padding: 10px 12px;
-      margin-bottom: 8px;
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin-bottom: 5px;
     }
 
     .pledge-fill-input {
@@ -570,12 +561,12 @@
       border-bottom: 2px solid #fef08a;
       background: transparent;
       color: #fef08a;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 900;
-      padding: 1px 8px;
+      padding: 0 6px;
       text-align: center;
       outline: none;
-      width: 140px;
+      width: 130px;
     }
 
     /* 낱말 보기 칩 */
@@ -584,57 +575,63 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
+      gap: 5px;
+      margin-top: 4px;
     }
 
     .word-chip {
       background: #ffffff;
       color: #1e3a8a;
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 14px;
+      padding: 2px 8px;
+      border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: transform 0.15s ease;
     }
     .word-chip:hover {
-      transform: translateY(-2px);
       background: #fef08a;
     }
 
     /* 푸터 */
     .sheet-footer {
-      border-top: 2px solid var(--gray-300);
-      padding-top: 8px;
-      margin-top: auto;
+      border-top: 1.5px solid var(--gray-300);
+      padding-top: 4px;
+      margin-top: 4px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       color: var(--gray-600);
     }
 
     .teacher-box {
-      border: 2px solid var(--soccer-green);
+      border: 1.5px solid var(--soccer-green);
       background: #f0fdf4;
-      border-radius: 8px;
-      padding: 4px 12px;
+      border-radius: 6px;
+      padding: 2px 8px;
       font-weight: 700;
       color: #065f46;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      font-size: 0.78rem;
     }
 
     /* ==========================================================================
-       인쇄 스타일 (@media print)
+       인쇄 스타일 (@page & @media print) - 완벽한 2페이지 칼정렬 보장
        ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 10mm 14mm 10mm 14mm;
+    }
+
     @media print {
-      body {
+      html, body {
+        width: 100% !important;
+        height: auto !important;
         background: transparent !important;
         padding: 0 !important;
+        margin: 0 !important;
       }
 
       .control-toolbar {
@@ -643,16 +640,26 @@
 
       .sheet-page {
         width: 100% !important;
-        min-height: auto !important;
+        height: 275mm !important;
+        max-height: 275mm !important;
         margin: 0 !important;
-        padding: 12mm 14mm !important;
+        padding: 0 !important;
         box-shadow: none !important;
         border: none !important;
-        page-break-after: always !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
       }
 
-      .sheet-page:last-child {
-        page-break-after: auto !important;
+      #page1 {
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+
+      #page2 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
       }
 
       .btn {
@@ -663,54 +670,49 @@
 </head>
 <body>
 
-  <!-- =========================================================================
-       상단 플로팅 툴바
-       ========================================================================= -->
+  <!-- 상단 플로팅 툴바 (화면 전용) -->
   <div class="control-toolbar">
     <div class="toolbar-title">
       <span>⚽</span> <strong>[통합학급용] 축구선수 가상 면담 활동지 (손흥민)</strong>
     </div>
     <div class="toolbar-actions">
-      <a href="index.html" class="btn btn-secondary">🏠 가상 면담 챗봇</a>
-      <a href="면담_후_학습지.html" class="btn btn-secondary">📑 일반 학습지</a>
-      <button class="btn btn-secondary" onclick="saveData()">💾 저장하기</button>
-      <button class="btn btn-secondary" onclick="resetForm()">🔄 다시 풀기</button>
+      <a href="index.html" class="btn btn-secondary">🏠 챗봇 홈</a>
+      <a href="면담_후_학습지.html" class="btn btn-secondary">📑 일반 활동지</a>
+      <button class="btn btn-secondary" onclick="saveData()">💾 저장</button>
+      <button class="btn btn-secondary" onclick="resetForm()">🔄 초기화</button>
       <button class="btn btn-green" onclick="window.print()">🖨️ A4 학습지 인쇄</button>
     </div>
   </div>
 
-  <!-- =========================================================================
-       [1쪽] A4 PAGE 1: 롤모델 손흥민 선수와 핵심 질문 돌아보기
-       ========================================================================= -->
+  <!-- [1쪽] A4 PAGE 1: 롤모델 손흥민 선수와 핵심 질문 돌아보기 -->
   <div class="sheet-page" id="page1">
 
     <!-- 머리말 -->
     <header class="sheet-header">
       <div class="unit-tag">
         <span>[초등 6학년 국어] 2. 궁금한 점을 해결해요 (2차시 블록)</span>
-        <span>통합학급 맞춤 학습지</span>
+        <span>통합학급 맞춤 활동지</span>
       </div>
       <h1 class="sheet-main-title">
         <span>⚽</span> 축구선수의 꿈을 향해 슛!
       </h1>
       <p class="sheet-sub-title">대한민국 축구 영웅 손흥민 선수와 가상 면담 돌아보기</p>
 
-      <!-- 학생 인적사항 바 -->
       <div class="student-info-bar">
         <div class="student-field">
           <span>6학년</span>
-          <input type="text" id="gradeInput" class="input-inline" style="width: 35px;" placeholder="   ">
+          <input type="text" id="gradeInput" class="input-inline" style="width: 32px;" placeholder="   ">
           <span>반</span>
-          <input type="text" id="classInput" class="input-inline" style="width: 35px;" placeholder="   ">
+          <input type="text" id="classInput" class="input-inline" style="width: 32px;" placeholder="   ">
           <span>번</span>
         </div>
         <div class="student-field">
           <span>이름 :</span>
-          <input type="text" id="nameInput" class="input-inline" style="width: 110px;" placeholder="           ">
+          <input type="text" id="nameInput" class="input-inline" style="width: 100px;" placeholder="           ">
         </div>
         <div class="student-field">
           <span>날짜 :</span>
-          <input type="text" id="dateInput" class="input-inline" style="width: 120px;" value="2026.   .   .">
+          <input type="text" id="dateInput" class="input-inline" style="width: 110px;" value="2026.   .   .">
         </div>
       </div>
     </header>
@@ -722,7 +724,7 @@
       </div>
       <div class="step-card-body">
         <div class="profile-banner">
-          <img src="images/son_heungmin.jpg" alt="손흥민 선수" class="profile-photo" onerror="this.outerHTML='<div class=\'profile-photo\' style=\'display:flex;align-items:center;justify-content:center;font-size:2rem;background:#dbeafe;\'>⚽</div>'">
+          <img src="images/son_heungmin.jpg" alt="손흥민 선수" class="profile-photo" onerror="this.outerHTML='<div class=\'profile-photo\' style=\'display:flex;align-items:center;justify-content:center;font-size:1.8rem;background:#dbeafe;\'>⚽</div>'">
           <div class="profile-info">
             <div class="profile-name-tag">손흥민 선수 (대한민국 국가대표 주장)</div>
             <div class="profile-sub-tag">면담한 직업 : <b>축구선수 (공격수)</b></div>
@@ -815,18 +817,16 @@
 
   </div>
 
-  <!-- =========================================================================
-       [2쪽] A4 PAGE 2: 손흥민 명언, 칭찬 자기평가, 나의 유니폼 다짐
-       ========================================================================= -->
+  <!-- [2쪽] A4 PAGE 2: 손흥민 명언, 칭찬 자기평가, 나의 유니폼 다짐 -->
   <div class="sheet-page" id="page2">
 
     <!-- 2쪽 머리말 -->
-    <header class="sheet-header" style="margin-bottom: 12px;">
+    <header class="sheet-header">
       <div class="unit-tag">
         <span>[국어 6-2 2단원 통합학급 활동지 - 2쪽]</span>
         <span>이름 : <span id="page2NameTag" style="font-weight: 800; color: #065f46; text-decoration: underline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
       </div>
-      <h2 style="font-size: 1.25rem; font-weight: 900; color: var(--gray-900); text-align: center;">
+      <h2 style="font-size: 1.15rem; font-weight: 900; color: var(--gray-900); text-align: center; margin: 1px 0 2px;">
         손흥민 선수의 멋진 마음을 닮아가는 나의 꿈!
       </h2>
     </header>
@@ -839,7 +839,7 @@
       <div class="step-card-body">
         
         <div class="quote-card">
-          <div style="font-size: 0.8rem; font-weight: 800; color: #b45309; text-align: center;">
+          <div style="font-size: 0.78rem; font-weight: 800; color: #b45309; text-align: center;">
             💬 손흥민 선수가 들려준 인생 명언
           </div>
           <div class="quote-text">
@@ -848,7 +848,7 @@
           </div>
         </div>
 
-        <div style="font-size: 0.92rem; font-weight: 800; color: var(--gray-800); margin-bottom: 4px;">
+        <div style="font-size: 0.84rem; font-weight: 800; color: var(--gray-800); margin-bottom: 2px;">
           👉 내가 손흥민 선수에게 본받고 싶은 점에 모두 체크(✔)해 볼까요?
         </div>
         <div class="checklist-row">
@@ -874,7 +874,7 @@
       <div class="step-card-header">
         <span class="step-badge">4단계</span> 참 잘했어요! 나의 면담 점수 (스마일 클릭!)
       </div>
-      <div class="step-card-body" style="padding: 6px 14px;">
+      <div class="step-card-body" style="padding: 4px 10px;">
 
         <div class="eval-row">
           <span class="eval-label">1. 손흥민 선수에게 예의 바르게 존댓말로 인사했나요?</span>
@@ -911,7 +911,7 @@
       <div class="step-card-header">
         <span class="step-badge step-badge-blue">5단계</span> 나의 꿈 유니폼 &amp; 멋진 다짐 카드
       </div>
-      <div class="step-card-body">
+      <div class="step-card-body" style="padding: 6px 10px;">
 
         <div class="uniform-card">
           <div class="uniform-header">
@@ -920,7 +920,7 @@
             </div>
             <div class="uniform-number-box">
               <span>등번호 :</span>
-              <input type="text" id="uniformNum" value="7" style="width: 35px; border:none; background:transparent; color:#fff; font-size:1.2rem; font-weight:900; text-align:center; outline:none;">
+              <input type="text" id="uniformNum" value="7" style="width: 30px; border:none; background:transparent; color:#fff; font-size:1.05rem; font-weight:900; text-align:center; outline:none;">
               <span>번</span>
             </div>
           </div>
@@ -932,8 +932,7 @@
             연습하는 멋진 축구선수가 되겠습니다! ❞
           </div>
 
-          <!-- 보기 단어 칩 (누르면 빈칸에 쏙 들어감) -->
-          <div style="font-size: 0.82rem; text-align: center; color: rgba(255,255,255,0.9); margin-bottom: 4px;">
+          <div style="font-size: 0.76rem; text-align: center; color: rgba(255,255,255,0.9); margin-bottom: 2px;">
             👇 단어를 누르면 위의 빈칸에 쏙 들어갑니다!
           </div>
           <div class="word-bank">
@@ -961,12 +960,8 @@
 
   </div>
 
-  <!-- =========================================================================
-       스크립트: 대화형 선택, 단어 삽입, 로컬 저장
-       ========================================================================= -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // 이름 입력 시 2쪽 태그에도 자동 연동
       const nameIn = document.getElementById("nameInput");
       nameIn.addEventListener("input", (e) => {
         document.getElementById("page2NameTag").textContent = e.target.value.trim() || "        ";
@@ -974,7 +969,6 @@
       loadData();
     });
 
-    // 선택지 선택
     function selectChoice(chip, groupName) {
       const parent = chip.parentElement;
       parent.querySelectorAll(".choice-chip").forEach(c => {
@@ -988,7 +982,6 @@
       saveData(false);
     }
 
-    // 체크박스 토글
     function toggleCheck(item) {
       item.classList.toggle("checked");
       const icon = item.querySelector(".check-box-icon");
@@ -1000,7 +993,6 @@
       saveData(false);
     }
 
-    // 스마일 버튼 선택
     function selectSmile(btn) {
       const group = btn.parentElement;
       group.querySelectorAll(".smile-btn").forEach(b => b.classList.remove("active"));
@@ -1008,16 +1000,12 @@
       saveData(false);
     }
 
-    // 보기 칩 클릭 시 빈칸에 자동 입력
     function applyWord(word) {
       const field = document.getElementById("pledgeField");
       field.value = word;
-      field.style.transform = "scale(1.1)";
-      setTimeout(() => { field.style.transform = "scale(1)"; }, 200);
       saveData(false);
     }
 
-    // 로컬 스토리지 저장
     function saveData(alertUser = true) {
       const data = {
         grade: document.getElementById("gradeInput").value,
@@ -1027,9 +1015,7 @@
         pledge: document.getElementById("pledgeField").value
       };
       localStorage.setItem("modeok_inclusive_soccer_worksheet", JSON.stringify(data));
-      if (alertUser) {
-        alert("작성한 내용이 안전하게 저장되었습니다! 👍");
-      }
+      if (alertUser) alert("작성한 내용이 안전하게 저장되었습니다! 👍");
     }
 
     function loadData() {
