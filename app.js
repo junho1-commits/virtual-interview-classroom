@@ -436,6 +436,63 @@ function copyReportText() {
   });
 }
 
+// 면담 후 활동지(A4)로 데이터 전달 및 새 창 열기
+function openWorksheetWithData() {
+  const target = document.getElementById("rptTarget").textContent;
+  const purpose = document.getElementById("rptPurpose").textContent;
+  const fact = document.getElementById("rptFact").textContent;
+  const feel = document.getElementById("rptFeeling").textContent;
+  const adv = document.getElementById("rptAdvice").textContent;
+  const learn = document.getElementById("rptLearned").textContent;
+  const imp = document.getElementById("rptImpressions").textContent;
+
+  let job = "";
+  let name = "";
+  if (currentFigure) {
+    job = currentFigure.job;
+    name = currentFigure.name;
+  } else {
+    name = target;
+  }
+
+  // 사용자 질문 추출
+  let qFact = "";
+  let qFeel = "";
+  let qPlan = "";
+  if (currentChatHistory && currentChatHistory.length > 0) {
+    const userMsgs = currentChatHistory.filter(m => m.role === 'user').map(m => m.text);
+    if (userMsgs.length > 0) qFact = userMsgs[0] || "";
+    if (userMsgs.length > 1) qFeel = userMsgs[1] || "";
+    if (userMsgs.length > 2) qPlan = userMsgs[userMsgs.length - 1] || "";
+  }
+
+  // 인상 깊었던 명언 추출 (첫 번째 따옴표나 대표 어록)
+  let quote = "";
+  if (currentFigure && currentFigure.tagline) {
+    quote = currentFigure.tagline;
+  }
+
+  const worksheetData = {
+    job: job,
+    name: name,
+    purpose: purpose,
+    qFact: qFact,
+    aFact: fact,
+    qFeel: qFeel,
+    aFeel: feel,
+    qPlan: qPlan,
+    aPlan: adv,
+    learned: learn,
+    quote: quote ? `❝ ${quote} ❞` : "",
+    quoteReason: "",
+    roleModel: imp,
+    pledge: ""
+  };
+
+  sessionStorage.setItem("currentInterviewWorksheet", JSON.stringify(worksheetData));
+  window.open("면담_후_학습지.html", "_blank");
+}
+
 // 모달 제어
 function openModal(id) {
   const modal = document.getElementById(id);

@@ -20,6 +20,9 @@
         </h1>
       </div>
       <div class="header-actions">
+        <a href="면담_후_학습지.html" target="_blank" class="btn btn-outline btn-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" title="A4 2페이지 양면 인쇄용 활동지 열기">
+          📑 면담 후 학습지
+        </a>
         <button id="btnBackToSelect" class="btn btn-outline btn-sm" style="display: none;" onclick="backToSelection()">
           ← 다른 인물 선택
         </button>
@@ -345,8 +348,9 @@
         </div>
       </div>
       <div class="modal-footer">
+        <button class="btn btn-primary" onclick="openWorksheetWithData()">📑 면담 후 활동지 작성/인쇄</button>
         <button class="btn btn-outline" onclick="copyReportText()">📋 텍스트 복사</button>
-        <button class="btn btn-primary" onclick="printReport()">🖨️ A4 학습지 인쇄</button>
+        <button class="btn btn-outline" onclick="printReport()">🖨️ 보고서 바로 인쇄</button>
         <button class="btn btn-outline" onclick="closeModal('reportModal')">닫기</button>
       </div>
     </div>
