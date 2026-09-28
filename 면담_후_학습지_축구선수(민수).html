@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[통합학급용] 축구선수의 꿈을 향해! 손흥민 선수와 가상 면담 활동지</title>
+  <title>축구선수의 꿈을 향해! 손흥민 선수와 가상 면담 활동지</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     /* ==========================================================================
-       통합학급 학생 맞춤형 스타일 (A4 2페이지 칼정렬 & 학생 질문 중심)
+       학생 맞춤형 스타일 (A4 2페이지 칼정렬 & 학생 질문 중심)
        ========================================================================== */
     :root {
       --soccer-green: #059669;
@@ -315,110 +315,83 @@
     .badge-feel { background: #fce7f3; color: #9d174d; }
     .badge-plan { background: #fef3c7; color: #92400e; }
 
-    /* 내가 한 질문 박스 (학생 주도 입력) */
+    /* 내가 한 질문 박스 (민수 주도 질문 입력) */
     .my-question-box {
       background: var(--primary-blue-light);
-      border-left: 3px solid var(--primary-blue);
-      border-radius: 4px;
-      padding: 4px 8px;
-      margin-bottom: 4px;
+      border: 1px solid #bfdbfe;
+      border-left: 3.5px solid var(--primary-blue);
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin-bottom: 6px;
     }
 
     .my-q-label {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 800;
       color: #1e40af;
       display: flex;
       align-items: center;
       gap: 4px;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
-    .my-q-text {
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: #1e293b;
-      outline: none;
-      min-height: 20px;
-    }
-
-    /* 손흥민 선수의 대답 박스 */
+    /* 손흥민 선수의 대답 박스 (답변 입력) */
     .answer-box {
       background: #f0fdf4;
-      border-left: 3px solid var(--soccer-green);
-      border-radius: 4px;
-      padding: 4px 8px;
+      border: 1px solid var(--soccer-green-border);
+      border-left: 3.5px solid var(--soccer-green);
+      border-radius: 6px;
+      padding: 8px 10px;
     }
 
     .ans-label {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 800;
       color: #065f46;
       display: flex;
       align-items: center;
       gap: 4px;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
 
-    .choice-group {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 3px 0;
-    }
-
-    .choice-chip {
-      background: #ffffff;
-      border: 1.5px solid var(--gray-300);
-      border-radius: 16px;
-      padding: 2px 9px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--gray-700);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      user-select: none;
-      transition: all 0.15s ease;
-    }
-
-    .choice-chip:hover {
-      background: var(--soccer-green-light);
-      border-color: var(--soccer-green);
-    }
-
-    .choice-chip.selected {
-      background: #dcfce7;
-      border-color: var(--soccer-green);
-      color: #065f46;
-      font-weight: 800;
-    }
-
-    .choice-chip .radio-circle {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      border: 1.5px solid var(--gray-400);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.68rem;
-      font-weight: 900;
-      background: #ffffff;
-    }
-
-    .choice-chip.selected .radio-circle {
-      border-color: var(--soccer-green);
-      background: var(--soccer-green);
-      color: #ffffff;
-    }
-
-    .fill-sentence {
-      font-size: 0.82rem;
+    /* 줄 공책 형태의 필기/입력 상자 */
+    .ruled-editable-box {
+      min-height: 32px;
+      line-height: 28px;
+      font-size: 0.9rem;
       font-weight: 600;
-      color: var(--gray-800);
-      margin-top: 2px;
+      color: var(--gray-900);
+      outline: none;
+      border-bottom: 1.5px dashed #93c5fd;
+      padding: 2px 6px;
+      background: #ffffff;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      transition: all 0.2s ease;
+    }
+
+    .answer-box .ruled-editable-box {
+      border-bottom: 1.5px dashed #86efac;
+    }
+
+    .ruled-multi-line {
+      min-height: 84px;
+      background-image: linear-gradient(to bottom, transparent 27px, #d1fae5 27px, #d1fae5 28px, transparent 28px);
+      background-size: 100% 28px;
+      line-height: 28px;
+    }
+
+    .ruled-editable-box:focus {
+      background-color: #ffffff;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+    }
+
+    .ruled-editable-box:empty:before {
+      content: attr(data-placeholder);
+      color: #94a3b8;
+      font-weight: 500;
+      font-size: 0.84rem;
     }
 
     /* 2쪽: 명언, 자기평가, 유니폼 다짐 */
@@ -427,35 +400,35 @@
       border: 1.5px solid #fde68a;
       border-left: 5px solid var(--accent-gold);
       border-radius: 8px;
-      padding: 5px 10px;
-      margin-bottom: 5px;
+      padding: 8px 12px;
+      margin-bottom: 7px;
     }
 
     .quote-text {
-      font-size: 0.92rem;
+      font-size: 0.96rem;
       font-weight: 800;
       color: #92400e;
-      line-height: 1.42;
+      line-height: 1.48;
       text-align: center;
-      margin: 1px 0;
+      margin: 2px 0;
     }
 
     .checklist-row {
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      margin-top: 3px;
+      gap: 5px;
+      margin-top: 4px;
     }
 
     .custom-check-item {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 10px;
+      padding: 6px 12px;
       background: var(--gray-50);
       border: 1px solid var(--gray-300);
       border-radius: 6px;
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       font-weight: 700;
       color: var(--gray-800);
       cursor: pointer;
@@ -689,6 +662,21 @@
       .btn {
         display: none !important;
       }
+
+      .ruled-editable-box:empty:before {
+        content: "" !important;
+      }
+
+      .ruled-editable-box {
+        background: transparent !important;
+        border-bottom: 1px dashed #cbd5e1 !important;
+      }
+
+      .ruled-multi-line {
+        min-height: 84px !important;
+        background-image: linear-gradient(to bottom, transparent 27px, #cbd5e1 27px, #cbd5e1 28px, transparent 28px) !important;
+        background-size: 100% 28px !important;
+      }
     }
   </style>
 </head>
@@ -697,7 +685,7 @@
   <!-- 상단 플로팅 툴바 (화면 전용) -->
   <div class="control-toolbar">
     <div class="toolbar-title">
-      <span>⚽</span> <strong>[통합학급용] 축구선수 가상 면담 활동지 (손흥민)</strong>
+      <span>⚽</span> <strong>축구선수 가상 면담 활동지 (손흥민)</strong>
     </div>
     <div class="toolbar-actions">
       <a href="index.html" class="btn btn-secondary">🏠 챗봇 홈</a>
@@ -715,7 +703,7 @@
     <header class="sheet-header">
       <div class="unit-tag">
         <span>[초등 6학년 국어] 2. 궁금한 점을 해결해요 (2차시 블록)</span>
-        <span>통합학급 맞춤 활동지</span>
+        <span>꿈 찾기 맞춤 활동지</span>
       </div>
       <h1 class="sheet-main-title">
         <span>⚽</span> 축구선수의 꿈을 향해 슛!
@@ -763,7 +751,7 @@
     <!-- [2단계] 손흥민 선수에게 직접 질문하고 대답 적기 -->
     <section class="step-card" style="margin-bottom: 0;">
       <div class="step-card-header">
-        <span class="step-badge step-badge-blue">2단계</span> 손흥민 선수에게 질문하고 대답 적기 (질문 3요소)
+        <span class="step-badge step-badge-blue">2단계</span> 손흥민 선수에게 직접 질문하고 대답 적기 (질문 3요소)
       </div>
       <div class="step-card-body">
 
@@ -771,27 +759,15 @@
         <div class="question-item">
           <div class="q-badge-row">
             <span class="q-type-badge badge-fact">① 구체적인 사실 질문</span>
-            <span style="font-size: 0.72rem; color: var(--gray-600);">어릴 때 한 훈련 알아보기</span>
+            <span style="font-size: 0.72rem; color: var(--gray-600);">축구선수가 하는 일, 훈련 방법, 준비 과정 등</span>
           </div>
           <div class="my-question-box">
             <div class="my-q-label">🗣️ 내가 한 질문:</div>
-            <div id="qFactInput" class="my-q-text" contenteditable="true">손흥민 선수, 축구선수가 되기 위해 어릴 때 매일 어떤 훈련을 하셨나요?</div>
+            <div id="qFactInput" class="ruled-editable-box" contenteditable="true" data-placeholder="손흥민 선수에게 궁금한 사실을 질문해 보세요. (예: 어릴 때 매일 어떤 훈련을 하셨나요?)"></div>
           </div>
           <div class="answer-box">
             <div class="ans-label">💬 손흥민 선수의 대답:</div>
-            <div class="choice-group">
-              <div class="choice-chip selected" onclick="selectChoice(this, 'choice1')">
-                <span class="radio-circle">✔</span>
-                <span>⚽ 양발 기본기 리프팅 4시간</span>
-              </div>
-              <div class="choice-chip" onclick="selectChoice(this, 'choice1')">
-                <span class="radio-circle"></span>
-                <span>🎮 하루 종일 오락 게임하기</span>
-              </div>
-            </div>
-            <div class="fill-sentence">
-              👉 손흥민 선수는 슈팅보다 축구공을 다루는 <b>( 기본기 )</b>를 가장 강조하셨어요!
-            </div>
+            <div id="aFactInput" class="ruled-editable-box ruled-multi-line" contenteditable="true" data-placeholder="손흥민 선수가 들려준 대답을 적어 보세요."></div>
           </div>
         </div>
 
@@ -799,55 +775,31 @@
         <div class="question-item">
           <div class="q-badge-row">
             <span class="q-type-badge badge-feel">② 생각이나 느낌 질문</span>
-            <span style="font-size: 0.72rem; color: var(--gray-600);">힘든 순간을 극복한 비결</span>
+            <span style="font-size: 0.72rem; color: var(--gray-600);">힘들었던 순간과 극복 비결, 보람찬 마음 등</span>
           </div>
           <div class="my-question-box">
             <div class="my-q-label">🗣️ 내가 한 질문:</div>
-            <div id="qFeelInput" class="my-q-text" contenteditable="true">말도 안 통하던 독일에서 외롭고 힘들었을 때 어떤 마음으로 이겨내셨나요?</div>
+            <div id="qFeelInput" class="ruled-editable-box" contenteditable="true" data-placeholder="손흥민 선수의 생각이나 느낌을 질문해 보세요. (예: 외롭고 힘들었을 때 어떤 마음으로 이겨내셨나요?)"></div>
           </div>
           <div class="answer-box">
             <div class="ans-label">💬 손흥민 선수의 대답:</div>
-            <div class="choice-group">
-              <div class="choice-chip" onclick="selectChoice(this, 'choice2')">
-                <span class="radio-circle"></span>
-                <span>😭 무서워서 울기만 했다</span>
-              </div>
-              <div class="choice-chip selected" onclick="selectChoice(this, 'choice2')">
-                <span class="radio-circle">✔</span>
-                <span>💪 끝까지 포기하지 않고 훈련했다</span>
-              </div>
-            </div>
-            <div class="fill-sentence">
-              👉 힘들 때도 끝까지 물러서지 않는 <b>( 끈기 있는 노력 )</b>을 배웠어요!
-            </div>
+            <div id="aFeelInput" class="ruled-editable-box ruled-multi-line" contenteditable="true" data-placeholder="손흥민 선수가 들려준 대답을 적어 보세요."></div>
           </div>
         </div>
 
         <!-- 조언 질문 -->
         <div class="question-item" style="margin-bottom: 0;">
           <div class="q-badge-row">
-            <span class="q-type-badge badge-plan">③ 앞으로의 조언 질문</span>
-            <span style="font-size: 0.72rem; color: var(--gray-600);">축구 꿈나무에게 주는 격려</span>
+            <span class="q-type-badge badge-plan">③ 앞으로의 조언이나 계획 질문</span>
+            <span style="font-size: 0.72rem; color: var(--gray-600);">축구 꿈나무에게 주는 조언, 앞으로의 목표 등</span>
           </div>
           <div class="my-question-box">
             <div class="my-q-label">🗣️ 내가 한 질문:</div>
-            <div id="qPlanInput" class="my-q-text" contenteditable="true">축구선수를 꿈꾸는 저에게 꼭 해주고 싶은 조언은 무엇인가요?</div>
+            <div id="qPlanInput" class="ruled-editable-box" contenteditable="true" data-placeholder="나를 위한 조언이나 앞으로의 계획을 질문해 보세요. (예: 축구선수를 꿈꾸는 저에게 해주고 싶은 조언은?)"></div>
           </div>
           <div class="answer-box">
             <div class="ans-label">💬 손흥민 선수의 대답:</div>
-            <div class="choice-group">
-              <div class="choice-chip selected" onclick="selectChoice(this, 'choice3')">
-                <span class="radio-circle">✔</span>
-                <span>❤️ 축구를 진심으로 즐기는 마음</span>
-              </div>
-              <div class="choice-chip" onclick="selectChoice(this, 'choice3')">
-                <span class="radio-circle"></span>
-                <span>😡 남을 이기려고 화내는 마음</span>
-              </div>
-            </div>
-            <div class="fill-sentence">
-              👉 "골을 넣는 것보다 축구를 <b>( 진심으로 즐기며 사랑하라 )</b>고 조언해 주셨어요!"
-            </div>
+            <div id="aPlanInput" class="ruled-editable-box ruled-multi-line" contenteditable="true" data-placeholder="손흥민 선수가 들려준 조언을 적어 보세요."></div>
           </div>
         </div>
 
@@ -868,7 +820,7 @@
     <!-- 2쪽 머리말 -->
     <header class="sheet-header">
       <div class="unit-tag">
-        <span>[국어 6-2 2단원 통합학급 활동지 - 2쪽]</span>
+        <span>[국어 6-2 2단원 맞춤 활동지 - 2쪽]</span>
         <span>이름 : <span id="page2NameTag" style="font-weight: 800; color: #065f46; text-decoration: underline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
       </div>
       <h2 style="font-size: 1.15rem; font-weight: 900; color: var(--gray-900); text-align: center; margin: 1px 0 2px;">
@@ -909,6 +861,13 @@
             <span class="check-box-icon">✔</span>
             <span>🤝 함께 뛰는 팀 친구들을 먼저 응원하는 <b>배려심</b></span>
           </div>
+        </div>
+
+        <div style="margin-top: 7px;">
+          <div style="font-size: 0.84rem; font-weight: 800; color: #065f46; margin-bottom: 2px;">
+            ✍️ 내가 손흥민 선수의 태도 중 가장 본받고 싶은 점과 그 까닭:
+          </div>
+          <div id="minsooReflect" contenteditable="true" class="ruled-editable-box" style="min-height: 48px; line-height: 26px; background-image: linear-gradient(to bottom, transparent 25px, #a7f3d0 25px, #a7f3d0 26px, transparent 26px); background-size: 100% 26px;" data-placeholder="예: 경기에서 지거나 힘들 때도 끝까지 포기하지 않고 훈련하는 끈기를 본받고 싶습니다."></div>
         </div>
 
       </div>
@@ -987,6 +946,13 @@
             <span class="word-chip" onclick="applyWord('체력과 달리기')">체력과 달리기</span>
             <span class="word-chip" onclick="applyWord('신나는 슛')">신나는 슛</span>
           </div>
+
+          <div style="margin-top: 8px; background: rgba(255,255,255,0.18); border-radius: 6px; padding: 6px 10px;">
+            <div style="font-size: 0.82rem; font-weight: 800; color: #fef08a; margin-bottom: 2px;">
+              ⭐ 나의 꿈을 이루기 위해 오늘부터 실천할 나의 약속:
+            </div>
+            <div id="minsooAction" contenteditable="true" class="ruled-editable-box" style="min-height: 40px; line-height: 25px; color: #ffffff; background: transparent; border-bottom: 1px dashed rgba(255,255,255,0.7);" data-placeholder="예: 방과 후에 매일 30분씩 운동장에서 리프팅 훈련을 열심히 하겠습니다."></div>
+          </div>
         </div>
 
       </div>
@@ -1013,19 +979,6 @@
       });
       loadData();
     });
-
-    function selectChoice(chip, groupName) {
-      const parent = chip.parentElement;
-      parent.querySelectorAll(".choice-chip").forEach(c => {
-        c.classList.remove("selected");
-        const circle = c.querySelector(".radio-circle");
-        if (circle) circle.textContent = "";
-      });
-      chip.classList.add("selected");
-      const circle = chip.querySelector(".radio-circle");
-      if (circle) circle.textContent = "✔";
-      saveData(false);
-    }
 
     function toggleCheck(item) {
       item.classList.toggle("checked");
@@ -1056,18 +1009,23 @@
         grade: document.getElementById("gradeInput").value,
         classNum: document.getElementById("classInput").value,
         name: document.getElementById("nameInput").value,
-        qFact: document.getElementById("qFactInput").textContent,
-        qFeel: document.getElementById("qFeelInput").textContent,
-        qPlan: document.getElementById("qPlanInput").textContent,
+        qFact: document.getElementById("qFactInput").innerText,
+        aFact: document.getElementById("aFactInput").innerText,
+        qFeel: document.getElementById("qFeelInput").innerText,
+        aFeel: document.getElementById("aFeelInput").innerText,
+        qPlan: document.getElementById("qPlanInput").innerText,
+        aPlan: document.getElementById("aPlanInput").innerText,
+        reflect: document.getElementById("minsooReflect") ? document.getElementById("minsooReflect").innerText : "",
+        action: document.getElementById("minsooAction") ? document.getElementById("minsooAction").innerText : "",
         uniformNum: document.getElementById("uniformNum").value,
         pledge: document.getElementById("pledgeField").value
       };
-      localStorage.setItem("modeok_inclusive_soccer_worksheet", JSON.stringify(data));
+      localStorage.setItem("modeok_minsoo_soccer_worksheet", JSON.stringify(data));
       if (alertUser) alert("작성한 내용이 안전하게 저장되었습니다! 👍");
     }
 
     function loadData() {
-      const saved = localStorage.getItem("modeok_inclusive_soccer_worksheet");
+      const saved = localStorage.getItem("modeok_minsoo_soccer_worksheet") || localStorage.getItem("modeok_inclusive_soccer_worksheet");
       if (saved) {
         try {
           const d = JSON.parse(saved);
@@ -1077,9 +1035,14 @@
             document.getElementById("nameInput").value = d.name;
             document.getElementById("page2NameTag").textContent = d.name;
           }
-          if (d.qFact) document.getElementById("qFactInput").textContent = d.qFact;
-          if (d.qFeel) document.getElementById("qFeelInput").textContent = d.qFeel;
-          if (d.qPlan) document.getElementById("qPlanInput").textContent = d.qPlan;
+          if (d.qFact) document.getElementById("qFactInput").innerText = d.qFact;
+          if (d.aFact) document.getElementById("aFactInput").innerText = d.aFact;
+          if (d.qFeel) document.getElementById("qFeelInput").innerText = d.qFeel;
+          if (d.aFeel) document.getElementById("aFeelInput").innerText = d.aFeel;
+          if (d.qPlan) document.getElementById("qPlanInput").innerText = d.qPlan;
+          if (d.aPlan) document.getElementById("aPlanInput").innerText = d.aPlan;
+          if (d.reflect && document.getElementById("minsooReflect")) document.getElementById("minsooReflect").innerText = d.reflect;
+          if (d.action && document.getElementById("minsooAction")) document.getElementById("minsooAction").innerText = d.action;
           if (d.uniformNum) document.getElementById("uniformNum").value = d.uniformNum;
           if (d.pledge) document.getElementById("pledgeField").value = d.pledge;
         } catch(e) {}
@@ -1087,7 +1050,8 @@
     }
 
     function resetForm() {
-      if (confirm("학습지를 처음 상태로 다시 풀까요?")) {
+      if (confirm("학습지를 처음 상태로 다시 작성할까요?")) {
+        localStorage.removeItem("modeok_minsoo_soccer_worksheet");
         localStorage.removeItem("modeok_inclusive_soccer_worksheet");
         location.reload();
       }

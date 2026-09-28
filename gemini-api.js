@@ -212,7 +212,7 @@ async function callGeminiApi(systemPrompt, contents) {
         payload = {
           system_instruction: { parts: [{ text: systemPrompt }] },
           contents: contents,
-          generationConfig: { temperature: 0.7, topP: 0.95, maxOutputTokens: 800 }
+          generationConfig: { temperature: 0.7, topP: 0.95, maxOutputTokens: 2048 }
         };
       } else {
         const mergedContents = [
@@ -222,7 +222,7 @@ async function callGeminiApi(systemPrompt, contents) {
         ];
         payload = {
           contents: mergedContents,
-          generationConfig: { temperature: 0.7, topP: 0.95, maxOutputTokens: 800 }
+          generationConfig: { temperature: 0.7, topP: 0.95, maxOutputTokens: 2048 }
         };
       }
 

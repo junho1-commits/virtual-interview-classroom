@@ -288,8 +288,8 @@
     /* 질문 3요소 카드 */
     .question-element-card {
       border: 1.5px solid var(--gray-300);
-      border-radius: 6px;
-      margin-bottom: 5px;
+      border-radius: 8px;
+      margin-bottom: 8px;
       overflow: hidden;
       background: #ffffff;
     }
@@ -297,8 +297,8 @@
     .element-card-header {
       background: var(--gray-50);
       border-bottom: 1px solid var(--gray-200);
-      padding: 3px 8px;
-      font-size: 0.82rem;
+      padding: 5px 10px;
+      font-size: 0.86rem;
       font-weight: 800;
       color: var(--gray-800);
       display: flex;
@@ -307,22 +307,22 @@
     }
 
     .element-card-body {
-      padding: 4px 8px;
+      padding: 6px 10px;
     }
 
     .q-row {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 2px;
-      font-size: 0.84rem;
+      margin-bottom: 5px;
+      font-size: 0.86rem;
     }
 
     .q-label {
       font-weight: 800;
       color: var(--primary);
-      width: 60px;
+      width: 65px;
       flex-shrink: 0;
-      padding-top: 1px;
+      padding-top: 2px;
     }
 
     .q-label-answer {
@@ -331,15 +331,16 @@
 
     .q-content {
       flex: 1;
-      min-height: 22px;
+      min-height: 28px;
     }
 
     /* 줄 공책 형태의 필기 라인 */
     .ruled-box {
       border-bottom: 1px dashed var(--line-color);
-      min-height: 24px;
-      padding: 1px 4px;
-      font-size: 0.84rem;
+      min-height: 28px;
+      line-height: 26px;
+      padding: 2px 6px;
+      font-size: 0.88rem;
       outline: none;
     }
     .ruled-box:focus {
@@ -348,6 +349,13 @@
     .ruled-box:empty:before {
       content: attr(data-placeholder);
       color: var(--gray-400);
+    }
+
+    .ruled-multi-line {
+      min-height: 84px;
+      line-height: 28px;
+      background-image: linear-gradient(to bottom, transparent 27px, #e2e8f0 27px, #e2e8f0 28px, transparent 28px);
+      background-size: 100% 28px;
     }
 
     /* 깊이 탐구하기 인용구 박스 */
@@ -513,6 +521,12 @@
         background: transparent !important;
       }
 
+      .ruled-multi-line {
+        min-height: 84px !important;
+        background-image: linear-gradient(to bottom, transparent 27px, #cbd5e1 27px, #cbd5e1 28px, transparent 28px) !important;
+        background-size: 100% 28px !important;
+      }
+
       .btn {
         display: none !important;
       }
@@ -528,7 +542,7 @@
     </div>
     <div class="toolbar-actions">
       <a href="index.html" class="btn btn-secondary">🏠 챗봇 홈</a>
-      <a href="통합학급_면담_후_학습지_축구선수.html" class="btn btn-secondary" style="border-color: #059669; color: #059669; font-weight: 700;">⚽ 통합학급용 (축구)</a>
+      <a href="면담_후_학습지_축구선수(민수).html" class="btn btn-secondary" style="border-color: #059669; color: #059669; font-weight: 700;">⚽ 맞춤 활동지 (축구)</a>
       <button class="btn btn-secondary" onclick="saveToLocalStorage()">💾 저장</button>
       <button class="btn btn-secondary" onclick="resetWorksheet()">🔄 초기화</button>
       <button class="btn btn-secondary" onclick="copyWorksheetText()">📋 복사</button>
@@ -584,7 +598,7 @@
         <tr>
           <th>면담 목적</th>
           <td>
-            <div id="viewPurpose" contenteditable="true" class="editable-box" data-placeholder="면담을 통해 알고 싶었던 점 (예: 이 직업을 갖기 위한 노력과 슬럼프를 극복한 비결을 알아보기 위해)"></div>
+            <div id="viewPurpose" contenteditable="true" class="editable-box" style="min-height: 48px; line-height: 24px;" data-placeholder="면담을 통해 알고 싶었던 점 (예: 이 직업을 갖기 위한 노력과 슬럼프를 극복한 비결을 알아보기 위해)"></div>
           </td>
         </tr>
         <tr>
@@ -601,7 +615,7 @@
       <h2 class="section-title">
         <span class="step-badge step-badge-accent">2단계</span> 핵심 질문 3요소로 내용 정리하기 (면담 가운데 부분)
       </h2>
-      <p style="font-size: 0.78rem; color: var(--gray-600); margin-bottom: 4px;">
+      <p style="font-size: 0.78rem; color: var(--gray-600); margin-bottom: 5px;">
         💡 <b>국어 2단원 쏙쏙 핵심</b>: 면담할 때에는 <u>구체적인 사실</u>, <u>생각이나 느낌</u>, <u>앞으로의 계획이나 당부</u>를 골고루 질문해야 풍성한 정보를 얻을 수 있습니다.
       </p>
 
@@ -614,11 +628,11 @@
         <div class="element-card-body">
           <div class="q-row">
             <span class="q-label">질문 :</span>
-            <div id="qFact" contenteditable="true" class="q-content ruled-box" data-placeholder="예: 슬럼프가 오거나 영감이 떠오르지 않을 때 주로 어떤 방법으로 곡을 쓰시나요?"></div>
+            <div id="qFact" contenteditable="true" class="q-content ruled-box" style="min-height: 32px;" data-placeholder="예: 슬럼프가 오거나 영감이 떠오르지 않을 때 주로 어떤 방법으로 곡을 쓰시나요?"></div>
           </div>
           <div class="q-row">
             <span class="q-label q-label-answer">답변 요약:</span>
-            <div id="aFact" contenteditable="true" class="q-content ruled-box" style="min-height: 38px;" data-placeholder="면담 대상자의 답변 핵심 내용을 요약하여 적어 보세요."></div>
+            <div id="aFact" contenteditable="true" class="q-content ruled-box ruled-multi-line" data-placeholder="면담 대상자의 답변 핵심 내용을 요약하여 적어 보세요."></div>
           </div>
         </div>
       </div>
@@ -632,11 +646,11 @@
         <div class="element-card-body">
           <div class="q-row">
             <span class="q-label">질문 :</span>
-            <div id="qFeel" contenteditable="true" class="q-content ruled-box" data-placeholder="예: 20번 넘게 오디션에 떨어지고 사기까지 당했을 때 어떤 마음으로 버티셨나요?"></div>
+            <div id="qFeel" contenteditable="true" class="q-content ruled-box" style="min-height: 32px;" data-placeholder="예: 20번 넘게 오디션에 떨어지고 사기까지 당했을 때 어떤 마음으로 버티셨나요?"></div>
           </div>
           <div class="q-row">
             <span class="q-label q-label-answer">답변 요약:</span>
-            <div id="aFeel" contenteditable="true" class="q-content ruled-box" style="min-height: 38px;" data-placeholder="면담 대상자가 느꼈던 감정과 이를 극복한 생생한 일화를 적어 보세요."></div>
+            <div id="aFeel" contenteditable="true" class="q-content ruled-box ruled-multi-line" data-placeholder="면담 대상자가 느꼈던 감정과 이를 극복한 생생한 일화를 적어 보세요."></div>
           </div>
         </div>
       </div>
@@ -650,11 +664,11 @@
         <div class="element-card-body">
           <div class="q-row">
             <span class="q-label">질문 :</span>
-            <div id="qPlan" contenteditable="true" class="q-content ruled-box" data-placeholder="예: 자신의 진로와 꿈을 고민하는 초등학교 6학년 친구들에게 어떤 조언을 해주고 싶으신가요?"></div>
+            <div id="qPlan" contenteditable="true" class="q-content ruled-box" style="min-height: 32px;" data-placeholder="예: 자신의 진로와 꿈을 고민하는 초등학교 6학년 친구들에게 어떤 조언을 해주고 싶으신가요?"></div>
           </div>
           <div class="q-row">
             <span class="q-label q-label-answer">답변 요약:</span>
-            <div id="aPlan" contenteditable="true" class="q-content ruled-box" style="min-height: 38px;" data-placeholder="면담 대상자가 건넨 따뜻한 당부와 앞으로의 계획을 적어 보세요."></div>
+            <div id="aPlan" contenteditable="true" class="q-content ruled-box ruled-multi-line" data-placeholder="면담 대상자가 건넨 따뜻한 당부와 앞으로의 계획을 적어 보세요."></div>
           </div>
         </div>
       </div>
@@ -689,25 +703,25 @@
       </h2>
 
       <!-- 새롭게 알게 된 사실 -->
-      <div style="margin-bottom: 6px;">
-        <label style="font-size: 0.84rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 2px;">
+      <div style="margin-bottom: 8px;">
+        <label style="font-size: 0.86rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 3px;">
           🔍 1. 면담 전에는 몰랐는데, 새롭게 알게 된 사실은 무엇인가요?
         </label>
-        <div id="viewLearned" contenteditable="true" class="ruled-box" style="min-height: 38px;" data-placeholder="예: 겉으로는 화려해 보였지만, 데뷔 전 수많은 실패 속에서도 매일 일기장을 쓰며 생각을 정리하고 가사를 지었다는 점을 새롭게 알았습니다."></div>
+        <div id="viewLearned" contenteditable="true" class="ruled-box ruled-multi-line" data-placeholder="예: 겉으로는 화려해 보였지만, 데뷔 전 수많은 실패 속에서도 매일 일기장을 쓰며 생각을 정리하고 가사를 지었다는 점을 새롭게 알았습니다."></div>
       </div>
 
       <!-- 마음을 울린 한마디 (명언) -->
       <div>
-        <label style="font-size: 0.84rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 2px;">
+        <label style="font-size: 0.86rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 3px;">
           💬 2. 면담 대상자의 답변 중 가장 마음에 와닿은 한마디(명언)와 그 까닭을 써 봅시다.
         </label>
-        <div class="quote-box">
-          <div style="font-size: 0.74rem; color: #b45309; font-weight: 800; margin-bottom: 1px;">가장 기억에 남는 말:</div>
+        <div class="quote-box" style="padding: 7px 12px; margin-bottom: 6px;">
+          <div style="font-size: 0.76rem; color: #b45309; font-weight: 800; margin-bottom: 2px;">가장 기억에 남는 말:</div>
           <div id="viewQuote" contenteditable="true" class="quote-content" data-placeholder="❝ 훌륭한 실패는 더 좋은 자리를 찾아가는 나침반이에요. 조급해하지 말고 자기만의 속도로 걸어가세요. ❞"></div>
         </div>
         <div style="padding-left: 2px;">
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--gray-700);">이 말이 인상 깊었던 까닭:</span>
-          <div id="viewQuoteReason" contenteditable="true" class="ruled-box" style="min-height: 28px;" data-placeholder="왜 이 말이 내 마음에 와닿았는지 나의 생각과 느낌을 솔직하게 적어 보세요."></div>
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--gray-700);">이 말이 인상 깊었던 까닭:</span>
+          <div id="viewQuoteReason" contenteditable="true" class="ruled-box" style="min-height: 56px; line-height: 28px;" data-placeholder="왜 이 말이 내 마음에 와닿았는지 나의 생각과 느낌을 솔직하게 적어 보세요."></div>
         </div>
       </div>
     </section>
@@ -717,43 +731,43 @@
       <h2 class="section-title">
         <span class="step-badge step-badge-orange">4단계</span> 면담 과정 성찰 및 자기 평가 (과정 중심 평가)
       </h2>
-      <p style="font-size: 0.76rem; color: var(--gray-600); margin-bottom: 2px;">
+      <p style="font-size: 0.78rem; color: var(--gray-600); margin-bottom: 4px;">
         스스로 나의 면담 태도와 실천 과정을 되돌아보며 별에 색칠해 봅시다. (별을 클릭하면 점수가 바뀝니다)
       </p>
 
       <table class="eval-table">
         <thead>
           <tr>
-            <th style="width: 18%;">평가 영역</th>
-            <th>평가 기준</th>
-            <th style="width: 22%;">자기 평가</th>
+            <th style="width: 18%; padding: 6px 8px;">평가 영역</th>
+            <th style="padding: 6px 8px;">평가 기준</th>
+            <th style="width: 22%; padding: 6px 8px;">자기 평가</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><b>면담 예절</b></td>
-            <td class="criteria">면담 대상자에게 예의 바른 인사와 존댓말로 정중하게 소통하였나요?</td>
-            <td class="stars-cell active-3" onclick="toggleStars(this)">⭐⭐⭐</td>
+            <td style="padding: 6px 8px;"><b>면담 예절</b></td>
+            <td class="criteria" style="padding: 6px 8px;">면담 대상자에게 예의 바른 인사와 존댓말로 정중하게 소통하였나요?</td>
+            <td class="stars-cell active-3" style="padding: 6px 8px;" onclick="toggleStars(this)">⭐⭐⭐</td>
           </tr>
           <tr>
-            <td><b>질문 마련</b></td>
-            <td class="criteria">면담 목적에 알맞은 질문 3요소(사실·느낌·당부)를 골고루 던졌나요?</td>
-            <td class="stars-cell active-3" onclick="toggleStars(this)">⭐⭐⭐</td>
+            <td style="padding: 6px 8px;"><b>질문 마련</b></td>
+            <td class="criteria" style="padding: 6px 8px;">면담 목적에 알맞은 질문 3요소(사실·느낌·당부)를 골고루 던졌나요?</td>
+            <td class="stars-cell active-3" style="padding: 6px 8px;" onclick="toggleStars(this)">⭐⭐⭐</td>
           </tr>
           <tr>
-            <td><b>경청과 호응</b></td>
-            <td class="criteria">상대방의 답변을 주의 깊게 듣고 흐름에 어울리는 추가 질문을 했나요?</td>
-            <td class="stars-cell active-3" onclick="toggleStars(this)">⭐⭐⭐</td>
+            <td style="padding: 6px 8px;"><b>경청과 호응</b></td>
+            <td class="criteria" style="padding: 6px 8px;">상대방의 답변을 주의 깊게 듣고 흐름에 어울리는 추가 질문을 했나요?</td>
+            <td class="stars-cell active-3" style="padding: 6px 8px;" onclick="toggleStars(this)">⭐⭐⭐</td>
           </tr>
           <tr>
-            <td><b>결과 정리</b></td>
-            <td class="criteria">면담으로 알게 된 핵심 내용을 왜곡 없이 정확하게 간추려 정리했나요?</td>
-            <td class="stars-cell active-3" onclick="toggleStars(this)">⭐⭐⭐</td>
+            <td style="padding: 6px 8px;"><b>결과 정리</b></td>
+            <td class="criteria" style="padding: 6px 8px;">면담으로 알게 된 핵심 내용을 왜곡 없이 정확하게 간추려 정리했나요?</td>
+            <td class="stars-cell active-3" style="padding: 6px 8px;" onclick="toggleStars(this)">⭐⭐⭐</td>
           </tr>
           <tr>
-            <td><b>디지털 시민성</b></td>
-            <td class="criteria">AI 가상 면담의 특성을 이해하고 진로 탐색에 유익하게 활용했나요?</td>
-            <td class="stars-cell active-3" onclick="toggleStars(this)">⭐⭐⭐</td>
+            <td style="padding: 6px 8px;"><b>디지털 시민성</b></td>
+            <td class="criteria" style="padding: 6px 8px;">AI 가상 면담의 특성을 이해하고 진로 탐색에 유익하게 활용했나요?</td>
+            <td class="stars-cell active-3" style="padding: 6px 8px;" onclick="toggleStars(this)">⭐⭐⭐</td>
           </tr>
         </tbody>
       </table>
@@ -765,18 +779,18 @@
         <span class="step-badge">5단계</span> 나의 진로와 미래 연결하기 (면담 뒷부분 &amp; 나의 다짐)
       </h2>
 
-      <div style="margin-bottom: 6px;">
-        <label style="font-size: 0.84rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 2px;">
+      <div style="margin-bottom: 8px;">
+        <label style="font-size: 0.86rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 3px;">
           🚀 1. 면담 대상자의 삶과 태도 중에서 내가 본받고 싶은 점은 무엇인가요?
         </label>
-        <div id="viewRoleModel" contenteditable="true" class="ruled-box" style="min-height: 32px;" data-placeholder="예: 아무리 힘든 실패를 겪어도 포기하지 않고, 꾸준히 일기를 쓰며 자신을 돌아보는 성실함과 끈기를 본받고 싶습니다."></div>
+        <div id="viewRoleModel" contenteditable="true" class="ruled-box" style="min-height: 56px; line-height: 28px;" data-placeholder="예: 아무리 힘든 실패를 겪어도 포기하지 않고, 꾸준히 일기를 쓰며 자신을 돌아보는 성실함과 끈기를 본받고 싶습니다."></div>
       </div>
 
       <div>
-        <label style="font-size: 0.84rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 3px;">
+        <label style="font-size: 0.86rem; font-weight: 700; color: var(--gray-800); display: block; margin-bottom: 4px;">
           ✍️ 2. 나의 꿈과 미래를 향한 한 줄 다짐을 완성해 봅시다.
         </label>
-        <div class="pledge-box">
+        <div class="pledge-box" style="padding: 8px 14px;">
           <span>나는 앞으로</span>
           <input type="text" id="viewPledge" class="pledge-input" placeholder="어려운 일이 생겨도 끈기 있게 도전하고 나만의 꿈을">
           <span>하겠다!</span>
@@ -789,7 +803,7 @@
       <div>
         <span>* 본 활동지는 가상 면담(AI 롤모델 시뮬레이션)을 통해 작성된 국어 2단원 학습 결과물입니다.</span>
       </div>
-      <div class="teacher-confirm">
+      <div class="teacher-confirm" style="padding: 3px 10px; border: 1.5px solid var(--gray-400); border-radius: 6px; font-weight: 700;">
         선생님 확인 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (인)
       </div>
     </footer>
